@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>基础表格</title>
+    <title>表格嵌套</title>
   </head>
   <body>
     <!-- 创建 2 行 3 列表格 -->
-    <table border="1">
+    <table border="1" cellspacing="0">
       <!-- 第 1 行 -->
       <tr>
         <!-- 第 1 列 -->
@@ -17,7 +17,19 @@
       </tr>
       <!-- 第 2 行 -->
       <tr>
-        <td>8000</td>
+        <!-- 表格的嵌套：必须是完整的表格，只能在<td>标签内 -->
+        <td>
+          <table border="1" cellspacing="0">
+            <tr>
+              <td>上半年</td>
+              <td>下半年</td>
+            </tr>
+            <tr>
+              <td>8000</td>
+              <td>9000</td>
+            </tr>
+          </table>
+        </td>
         <!-- 第 2 列 -->
         <td>10000</td>
         <td>12000</td>

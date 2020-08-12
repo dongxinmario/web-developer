@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>表单select</title>
+</head>
+
+<body>
+  <h1 align="center">注册信息</h1>
+  <hr color="#336699" />
+  <form action="action.php" method="POST" target="_blank">
+    <table width="600px" bgcolor="#f2f2f2" align="center">
+      <tr>
+        <td align="right">姓名：</td>
+        <td align="left"><input type="text" name="username" size="25" maxlength="6" placeholder="请输入姓名" /></td>
+      </tr>
+      <tr>
+        <td align="right">邮箱：</td>
+        <td align="left"><input type="text" name="email" value="@qq.com" /></td>
+      </tr>
+      <tr>
+        <td align="right">密码：</td>
+        <td align="left"><input type="password" name="pwd" size="25" maxlength="6" placeholder="请输入密码" /></td>
+      </tr>
+      <tr>
+        <td align="right">确认密码：</td>
+        <td align="left"><input type="password" name="pwd" size="25" maxlength="6" placeholder="请再次输入密码" /></td>
+      </tr>
+      <tr>
+        <td align="right">上传照片</td>
+        <td align="left"><input type="file" name="file" /></td>
+      </tr>
+      <tr>
+        <td align="right">性别：</td>
+        <td align="left">
+          男<input type="radio" name="sex" value="male" /> 女<input type="radio" name="sex" value="female" />保密<input
+            type="radio" name="sex" value="secret" checked />
+        </td>
+      </tr>
+      <tr>
+        <td align="right">爱好：</td>
+        <td align="left">
+          <input type="checkbox" name="dx1" value="read" />读书
+          <input type="checkbox" name="dx1" value="dance" />跳舞
+          <input type="checkbox" name="dx1" value="sing" />唱歌
+        </td>
+      </tr>
+      <tr>
+        <td align="right">爱好的运动：</td>
+        <td align="left">
+          <input type="checkbox" name="dx2" value="basketball">篮球
+          <input type="checkbox" name="dx2" value="run">跑步
+          <input type="checkbox" name="dx2" value="football">足球
+        </td>
+      </tr>
+      <tr>
+        <td align="right">城市：</td>
+        <td align="left">
+          <select name="province">
+            <option value="">--请选择--</option>
+            <!-- selected 属性：默认选中 -->
+            <option value="beijing" selected>北京</option>
+            <option value="tianjin">天津</option>
+            <option value="hebei">河北</option>
+            <option value="shanghai">上海</option>
+            <option value="fujian">福建</option>
+            <option value="jiangsu">江苏</option>
+          </select>
+          <!-- size 属性：显示多个选项，列表显示。multiple 属性实现多选 -->
+          <select name="province" size="6" multiple>
+            <option value="beijing">北京</option>
+            <option value="tianjin">天津</option>
+            <option value="hebei">河北</option>
+            <option value="shanghai">上海</option>
+            <option value="fujian">福建</option>
+            <option value="jiangsu">江苏</option>
+          </select>
+          <select name="province">
+            <option>--请选择--</option>
+            <optgroup label="华北">
+              <option value="beijing" selected>北京</option>
+              <option value="tianjin">天津</option>
+              <option value="hebei">河北</option>
+            </optgroup>
+            <optgroup label="华东">
+              <option value="shanghai">上海</option>
+              <option value="fujian">福建</option>
+              <option value="jiangsu">江苏</option>
+            </optgroup>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td align="right">简介</td>
+        <td align="left">
+          <textarea name="Introduction" cols="30" rows="10" placeholder="请输入个人介绍"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="button" value="来点我" name="button">
+          <input type="submit" value="submit" name="submit">
+          <input type="reset" value="reset" name="reset">
+          <!-- 图片域同样有提交功能 -->
+          <input type="image" src="./images/image-button.png" alt="图片按钮" name="image_button">
+        </td>
+      </tr>
+      <tr>
+        <!-- 隐藏域 -->
+        <td><input type="hidden" name="hidden" value="这是一个用户注册信息"></td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
+</body>
+
+</html>
