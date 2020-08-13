@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>块级元素和行内元素</title>
+</head>
+
+<body>
+  <!-- div 标签 -->
+  <div>
+    <img src="./images/html.jpg" alt="">HTML课程
+  </div>
+  <div>
+    <img src="./images/js1.jpg" alt="">JavaScriot入门课程
+  </div>
+  <div>
+    <img src="./images/js2.jpg" alt="">JavaScriot进阶课程
+  </div>
+  <!-- span 标签 -->
+  <span>
+    <img src="./images/html.jpg" alt="">HTML课程
+  </span>
+  <span>
+    <img src="./images/js1.jpg" alt="">JavaScriot入门课程
+  </span>
+  <span>
+    <img src="./images/js2.jpg" alt="">JavaScriot进阶课程
+  </span>
+  <!-- 
+    标签嵌套规则
+    块级元素可包含行内元素和某些块级元素
+   -->
+  <div>
+    <h1></h1>
+    <a href=""></a>
+  </div>
+  <!-- 行内元素不能包含块元素，只能包含其他行内元素 -->
+  <!-- <a href=""><h1></h1><div></div></a> 错误 -->
+  <!-- 正确使用 -->
+  <span><em></em></span>
+  <!-- 块级元素不能放在<p>标签内 -->
+  <p>
+    <div>111</div>
+    <h1>2222</h1>
+  </p>
+  <!-- 特殊块级元素只能包含行内元素，不能再包含块级元素，如：h1、h2、h3、h4、h5、h6、p、dt -->
+  <!-- 块级元素与块元素并列，行内元素和行内元素并列 -->
+  <!-- 正确 -->
+  <div>
+    <h1></h1>
+    <p></p>
+  </div>
+  <div><span></span><a href=""></a></div>
+  <!-- 错误 -->
+  <div>
+    <h1>333</h1><span>33334</span>
+  </div>
+</body>
+
+</html>
