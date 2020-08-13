@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS使用方法优先级</title>
+    <link rel="stylesheet" href="./css外部样式表优先级.css">
+    <style>
+      @import url(./css优先级.css); /* color:green */
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p style="color: red;"><b>css使用方法</b></p>
+    <!-- 
+      优先级: 行内>内部>导入式>外部 就近原则
+     -->
+     
+  </body>
+</html>

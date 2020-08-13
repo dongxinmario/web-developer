@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS继承和层叠</title>
+    <style>
+      /* 继承样式与自身样式冲突时，不使用继承样式 */
+      /* p{
+        color: red;
+      } */
+      /* div {
+        font-size: 20px;
+        border: 1px solid red;
+      } */
+      /* body,
+      table,
+      tr,
+      td {
+        font-size: 12px;
+      } */
+      /* css层叠：冲突时，就近原则；不冲突时，多个层叠为一个 */
+      h1 {
+        color: red;
+      }
+      h1 {
+        font-size: 111px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div>
+      <p>CSS<span>继承</span></p>
+      <div>CSS层叠</div>
+    </div>
+    <p>CSS继承和层叠</p>
+    <table border="1">
+      <tr>
+        <td>CSS继承</td>
+        <td>CSS层叠</td>
+      </tr>
+    </table> -->
+    <h1>CSS继承和层叠</h1>
+  </body>
+</html>
