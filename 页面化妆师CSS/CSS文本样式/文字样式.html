@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文字样式</title>
+    <style>
+      h1 {
+        font-family: '宋体';
+        color: red;
+      }
+      p {
+        font-family: '微软雅黑', '宋体', '黑体';
+        color: rgb(0%, 100%, 0%);
+      }
+      div {
+        color: #080;
+      }
+      p {
+        font-family: '黑体';
+      }
+      .normal {
+        font-weight: normal;
+        color: #000;
+      }
+      .bold {
+        font-weight: bold;
+        color: #000;
+      }
+      .bolder {
+        font-weight: bolder;
+        color: #000;
+      }
+      .lighter {
+        font-weight: lighter;
+        color: #000;
+      }
+      .f100 {
+        font-weight: 100;
+        color: #000;
+      }
+      .f200 {
+        font-weight: 200;
+        color: #000;
+      }
+      .f300 {
+        font-weight: 300;
+        color: #000;
+      }
+      .f400 {
+        font-weight: 400;
+        color: #000;
+      }
+      .f500 {
+        font-weight: 500;
+        color: #000;
+      }
+      .f600 {
+        font-weight: 600;
+        color: #000;
+      }
+      .f700 {
+        font-weight: 700;
+        color: #000;
+      }
+      .f800 {
+        font-weight: 800;
+        color: #000;
+      }
+      .f900 {
+        font-weight: 900;
+        color: #000;
+      }
+      p.fontVariant {
+        color: #000;
+        font-variant: small-caps;
+      }
+      p.font {
+        /* font 简写 */
+        font: italic bold small-caps 50px '黑体';
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="font-family: '宋体';">CSS层叠样式表（Cascading Style Sheets）</h1>
+    <p>
+      CSS目前最新版本为CSS3，是能够真正做到网页表现与内容分离的一种样式设计语言。相对于传统
+      HTML的表现而言，CSS能够对网页中的对象的位置排版进行像素级的精确控制，支持几乎所有的字体
+      字号样式，拥有对网页对象和模型样式编辑的能力，并能够进行初步交互设计，是目前基于文本展示
+      最优秀的表现设计语言。CSS能够根据不同使用者的理解能力，简化或者优化写法，针对各类人群， 有较强的易读性。
+    </p>
+    <div>
+      CSS目前最新版本为CSS3，是能够真正做到网页表现与内容分离的一种样式设计语言。相对于传统
+      HTML的表现而言，CSS能够对网页中的对象的位置排版进行像素级的精确控制，支持几乎所有的字体
+      字号样式，拥有对网页对象和模型样式编辑的能力，并能够进行初步交互设计，是目前基于文本展示
+      最优秀的表现设计语言。CSS能够根据不同使用者的理解能力，简化或者优化写法，针对各类人群， 有较强的易读性。
+    </div>
+    <!-- HTML中加粗 -->
+    <p style="color: #000;">字体粗细<b>font-wight</b></p>
+    <p style="color: #000;">字体粗细<strong>font-wight</strong></p>
+    <!-- CSS中加粗 -->
+    <p class="normal">字体粗细font-weight：normal</p>
+    <p class="bolder">字体粗细font-weight：bolder</p>
+    <p class="bold">字体粗细font-weight：bold</p>
+    <p class="lighter">字体粗细font-weight：lighter</p>
+    <!-- 数值 -->
+    <p class="f100">字体粗细font-weight：100</p>
+    <p class="f200">字体粗细font-weight：200</p>
+    <p class="f300">字体粗细font-weight：300</p>
+    <p class="f400">字体粗细font-weight：400</p>
+    <p class="f500">字体粗细font-weight：500</p>
+    <p class="f600">字体粗细font-weight：600</p>
+    <p class="f700">字体粗细font-weight：700</p>
+    <p class="f800">字体粗细font-weight：800</p>
+    <p class="f900">字体粗细font-weight：900</p>
+    <!-- HTML中的斜体 -->
+    <p style="color: #000;">正常的字体</p>
+    <p style="color: black;"><em>斜体</em></p>
+    <p style="color: black;"><i>斜体</i></p>
+    <!-- CSS中的斜体 -->
+    <p>正常的字体</p>
+    <p style="color: black; font-style: italic;">斜体</p>
+    <p style="color: black; font-style: oblique;">倾斜</p>
+    <!-- 小型大写 -->
+    <p class="font">CSS层叠样式表（Cascading Style Sheets）</p>
+    <p class="fontVariant">CSS层叠样式表（Cascading Style Sheets）</p>
+  </body>
+</html>
