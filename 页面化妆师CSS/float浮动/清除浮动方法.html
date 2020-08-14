@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>清除浮动方法</title>
+    <style>
+      .clear {
+        /* 方法一 */
+        /* clear: both; */
+      }
+      /* 方法三 */
+      /* .clearfix:after{
+        content: '';
+        height: 0;
+        display: block;
+        visibility: hidden;
+        clear: both;
+      }
+      .clearfix{
+        zoom: 1;
+      } */
+      .container {
+        width: 500px;
+        /* height: 500px; */
+        /* 方法四：父级元素添加固定高度 */
+        /* height: 100px; */
+        border: 2px solid #333;
+        /* 方法二 */
+        /* overflow: hidden;
+        zoom: 1; */
+        /* 方法五：父级元素添加浮动，产生新的浮动问题 */
+        /* float: left; */
+      }
+      .box01 {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        color: #fff;
+        float: left;
+        /* clear: left; */
+      }
+      .box02 {
+        width: 100px;
+        height: 100px;
+        background: red;
+        color: #fff;
+        float: left;
+        /* clear: left; */
+      }
+      .box03 {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        color: #fff;
+        float: left;
+        /* clear: left; */
+      }
+      .box04 {
+        width: 500px;
+        height: 200px;
+        background: green;
+        border: 2px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container clearfix">
+      <div class="box01">11111</div>
+      <div class="box02">22222</div>
+      <div class="box03">33333</div>
+      <div class="clear"></div>
+    </div>
+    <div class="box04">44444</div>
+  </body>
+</html>

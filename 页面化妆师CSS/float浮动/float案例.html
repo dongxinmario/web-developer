@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float案例</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      .container {
+        width: 1200px;
+        margin: 0 auto;
+      }
+      .header {
+        width: 1200px;
+        background: #ccc;
+        overflow: hidden;
+        zoom: 1;
+      }
+      .header .logo {
+        width: 200px;
+        height: 80px;
+        float: left;
+      }
+      .header .nav {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <a href="#"><img src="./images/logo.png" alt="" /></a>
+        </div>
+        <ul class="nav">
+          <li><a href="#">免费课程</a></li>
+          <li><a href="#">职业路径</a></li>
+          <li><a href="#">实战</a></li>
+          <li><a href="#">猿问</a></li>
+          <li><a href="#">手记</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
