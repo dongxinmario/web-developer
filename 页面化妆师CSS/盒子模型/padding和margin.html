@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>padding和margin</title>
+    <style>
+      /* .one {
+        width: 300px;
+        height: 300px;
+        background-color: #acacac;
+        padding-top: 20px;
+        padding-left: 30px;
+        padding-bottom: 50px;
+        padding-right: 40px;
+      } */
+      /* .one {
+        width: 300px;
+        height: 300px;
+        background-color: #acacac;
+        padding: 20px 10px 10px 5px;
+      }
+      .content {
+        width: 100%;
+        height: 100%;
+        background-color: #ececec;
+      } */
+      /* body,
+      p {
+        margin: 0;
+      }
+      .one {
+        height: 300px;
+        width: 300px;
+        background-color: #acacac;
+        margin: 10px 5px 8px 20px;
+      } */
+      .one {
+        height: 300px;
+        width: 300px;
+        background-color: #acacac;
+        margin-bottom: 20px;
+      }
+      .two {
+        height: 300px;
+        width: 300px;
+        background-color: #acacac;
+        margin-top: 10px;
+      }
+      .content {
+        width: 100px;
+        height: 100px;
+        background-color: #ececec;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="one">
+      <div class="content">padding属性</div>
+    </div> -->
+    <div class="one"><div class="content">margin属性</div></div>
+    <!-- <p>1122434</p> -->
+    <!-- 垂直方向，两个相邻元素都设置外边距，外边距会发生合并。总高度为两者中的较大者 -->
+    <div class="two"><div class="content">margin属性</div></div>
+  </body>
+</html>

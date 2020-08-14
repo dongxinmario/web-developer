@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>高宽属性</title>
+    <style>
+      /* div{
+        width: 600px;
+        background-color: #acacac;
+      } */
+      p {
+        background-color: #ececec;
+        width: 200px;
+        height: auto;
+      }
+      span{
+        background-color: #acacac;
+        width: 200px;
+        height: 100px;
+      }
+      .one {
+        max-width: 300px;
+        max-height: 100px;
+      }
+      .two {
+        min-width: 250px;
+        min-height: 100px;
+      }
+      .three {
+        max-width: 500px;
+        max-height: 200px;
+        min-height: 100px;
+        background-color: #acacac;
+      }
+      .four {
+        min-width: 500px;
+      }
+      .five {
+        min-width: 500px;
+        max-width: 600px;
+      }
+      img{
+        width: 200px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- 高宽属性适用于块级元素和替换元素 -->
+      <img src="./images/css.jpg" alt="" height="200px">
+      <img src="./images/HTML.jpg" alt="">
+      <p>盒子模型宽度 width: 400px; 高度 height: 100px;</p>
+      <span>盒子模型宽高height和width</span>
+      <p class="one">盒子模型最大宽度 max-width: 300px; 最大高度: 100px;</p>
+      <p class="two">盒子模型最小宽度 min-width: 250px; 最小高度: 100px;</p>
+      <p class="three">盒子模型最大宽度 max-width: 500px</p>
+      <p class="four">盒子模型最小宽度 min-width: 500px</p>
+      <p class="five">盒子模型最大小宽度 min-width 和 max-width</p>
+    </div>
+  </body>
+</html>

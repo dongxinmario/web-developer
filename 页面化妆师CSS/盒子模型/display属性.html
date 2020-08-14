@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display属性</title>
+    <style>
+      div,
+      span {
+        background-color: #00aaee;
+        border: 1px #666 solid;
+      }
+      div {
+        /* 块级元素转换为内联元素，元素没有换行符 */
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        padding: 5px;
+        margin: 10px;
+      }
+      span {
+        /* 内联元素转换为块级元素，有换行符 */
+        display: none;
+        /* width: 100px;
+        height: 30px;
+        padding: 5px;
+        margin: 10px; */
+      }
+      a:hover span {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 块级元素 -->
+    <!-- <div class="one"> -->
+    <div>display属性-div</div>
+    <div>display属性-div</div>
+    <div>display属性-div</div>
+    <!-- </div>- -->
+    <hr />
+    <!-- 内联元素 -->
+    <span>display属性-span</span>
+    <span>display属性-span</span>
+    <span>display属性-span</span>
+    <a href="#">指我<span>的加分加分</span></a>
+  </body>
+</html>
