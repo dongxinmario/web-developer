@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>定位实例</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .con {
+        width: 100%;
+        height: 4000px;
+        background: url('./mooc.png') no-repeat center top;
+      }
+      .opacity_ {
+        width: 100%;
+        height: 100%;
+        background: url('./opacity.png') no-repeat;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+      }
+      .login {
+        width: 360px;
+        height: 360px;
+        background: url('./login.png') no-repeat;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin-left: -180px;
+        margin-top: -180px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="con"></div>
+    <!-- 遮罩防止无序点击 -->
+    <div class="opacity_"></div>
+    <div class="login"></div>
+  </body>
+</html>

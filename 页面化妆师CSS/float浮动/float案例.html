@@ -29,9 +29,51 @@
         width: 200px;
         height: 80px;
         float: left;
+        margin: 0 40px;
       }
       .header .nav {
         float: right;
+        overflow: hidden;
+        zoom: 1;
+        padding-right: 40px;
+      }
+      .header .nav li {
+        float: left;
+        margin-right: 20px;
+      }
+      .header .nav li a {
+        padding: 0 20px;
+        height: 80px;
+        line-height: 80px;
+        display: block;
+        font-family: '微软雅黑';
+        font-size: 16px;
+        color: #333;
+      }
+      .header .nav li a:hover {
+        color: #fff;
+      }
+      .main {
+        width: 1200px;
+        overflow: hidden;
+        zoom: 1;
+      }
+      .main .con {
+        width: 1000px;
+        height: 500px;
+        background: blue;
+        float: left;
+      }
+      .main .sidebar {
+        width: 200px;
+        height: 500px;
+        background: orange;
+        float: left;
+      }
+      .footer{
+        width: 1200px;
+        height: 100px;
+        background: red;
       }
     </style>
   </head>
@@ -49,6 +91,11 @@
           <li><a href="#">手记</a></li>
         </ul>
       </div>
+      <div class="main">
+        <div class="con">content</div>
+        <div class="sidebar">sidebar</div>
+      </div>
+      <div class="footer">footer</div>
     </div>
   </body>
 </html>

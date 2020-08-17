@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css" />
+    <title>css-position-absolute</title>
+    <style>
+      /* .block {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        border: 2px solid black;
+      }
+      .block:nth-child(2) {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 50%;
+        height: 50%;
+        border-color: red;
+      } */
+      .parent {
+        position: relative;
+        width: 200px;
+        height: 150px;
+        background: blue;
+      }
+      .child {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: red;
+        margin: auto auto;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="block">A</div>
+    <div class="block">B</div>
+    <div class="block">C</div> -->
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
