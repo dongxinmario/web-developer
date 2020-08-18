@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多媒体标签</title>
+  </head>
+  <body>
+    <!-- audio -->
+    <!-- Chrome 浏览器不再支持 audio 标签的 autoplay 属性 -->
+    <audio src="./Source/passion.mp3" controls>浏览器不支持 audio 标签，试试 Chrome 浏览器或 Edge 浏览器</audio>
+    <br />
+    <br />
+    <audio controls>
+      <source src="./Source/passion.mp3" type="audio/mpeg" />
+    </audio>
+    <br />
+    <br />
+    <!-- video -->
+    <!-- Chrome 浏览器不再支持 video 标签的 autoplay 属性 -->
+    <video src="./Source/pal4.mp4" controls width="1024" height="768"></video>
+    <br />
+    <br />
+    <video controls>
+      <source src="./Source/pal4.mp4" type="video/mp4" />
+    </video>
+    <br />
+    <br />
+    <!-- Embed 标记定义外部可交互的内容或插件，如 flash -->
+    <!-- 播放 flash 文件，Chrome 已不再支持 flash -->
+    <embed src="./Source/ValentinesDay.swf" type="" width="1024" height="768" />
+  </body>
+</html>
