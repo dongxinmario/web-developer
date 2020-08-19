@@ -1,0 +1,1 @@
+document.write('这里是写在 js 文件中的文字')
