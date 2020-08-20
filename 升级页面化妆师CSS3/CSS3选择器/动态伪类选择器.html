@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动态伪类选择器</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+      a:link {
+        color: #000;
+      }
+      a:visited {
+        color: #00f;
+      }
+      a:hover {
+        color: #f00;
+      }
+      a:active {
+        color: #ff0;
+      }
+      input {
+        width: 200px;
+        height: 30px;
+        border: 5px solid #f00;
+      }
+      input:focus {
+        background: #abcdef;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">动态伪类选择器</a>
+    <br />
+    <input type="text" />
+  </body>
+</html>

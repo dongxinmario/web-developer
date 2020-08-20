@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基本选择器</title>
+    <style>
+      .section-one > .div-one {
+        color: #f00;
+      }
+      .section-two > .div-two + .article-two {
+        color: #f00;
+      }
+      .section-three > .div-three ~ .article-three {
+        color: #f00;
+      }
+      .section-four > .article-four,
+      .section-four > .aside-four,
+      .section-four > .div-four {
+        color: #f00;
+        margin-top: 10px;
+        background: #abcdef;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 子元素选择器 -->
+    <div>子元素选择器</div>
+    <section class="section-one">
+      <div class="div-one">article 外面的文字</div>
+      <article class="article-one">
+        <div class="div-one">article 里面的文字</div>
+      </article>
+    </section>
+    <br />
+    <!-- 兄弟选择器 -->
+    <div>兄弟选择器</div>
+    <section class="section-two">
+      <div class="div-two">article 外面的文字</div>
+      <article class="article-two">
+        <div class="div-two">article 里面的文字</div>
+      </article>
+      <article class="article-two">
+        <div class="div-two">article 里面的文字</div>
+      </article>
+    </section>
+    <br />
+    <!-- 通用兄弟选择器 -->
+    <div>通用兄弟选择器</div>
+    <section class="section-three">
+      <article class="article-three">
+        <div class="div-three">article 里面的文字</div>
+      </article>
+      <div class="div-three">article 外面的文字</div>
+      <article class="article-three">
+        <div class="div-three">article 里面的文字</div>
+      </article>
+      <article class="article-three">
+        <div class="div-three">article 里面的文字</div>
+      </article>
+      <article class="article-three">
+        <div class="div-three">article 里面的文字</div>
+      </article>
+      <article class="article-three">
+        <div class="div-three">article 里面的文字</div>
+      </article>
+    </section>
+    <br />
+    <!-- 群组选择器 -->
+    <div>群组选择器</div>
+    <section class="section-four">
+      <article class="article-four">article</article>
+      <aside class="aside-four">aside</aside>
+      <div class="div-four">div</div>
+    </section>
+  </body>
+</html>

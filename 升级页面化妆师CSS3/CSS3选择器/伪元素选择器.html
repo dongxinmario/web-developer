@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>伪元素选择器</title>
+    <style>
+      div {
+        width: 500px;
+        margin: 0 auto;
+        font-size: 16px;
+      }
+      /* div::first-line {
+        color: #f00;
+        font-weight: bold;
+      } */
+      .div1::first-letter {
+        color: #f00;
+        font-size: 32px;
+        font-weight: bold;
+      }
+      .div2 {
+        width: 300px;
+        height: 100px;
+        border: 1px solid #000;
+      }
+      .div2::before {
+        content: '我在内容前面';
+      }
+      .div3 {
+        width: 300px;
+        height: 100px;
+        border: 1px solid #000;
+      }
+      .div3::after {
+        content: '我在内容后面';
+      }
+      header {
+        background: #abcdef;
+      }
+      header > article {
+        float: left;
+        width: 40%;
+        height: 30px;
+        background: #f00;
+      }
+      header > aside {
+        float: right;
+        width: 40%;
+        height: 50px;
+        background: #ff0;
+      }
+      header::after {
+        display: block;
+        content: '';
+        clear: both;
+      }
+      .div4::selection {
+        background: red;
+        color: #ff0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ::first-line ::first-letter 只能用于块级元素 -->
+    <div class="div1">
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+    </div>
+    <br />
+    <!-- ::before 在元素前面插入内容 与 content 配合使用 -->
+    <div class="div2">伪元素 before</div>
+    <br />
+    <!-- ::after 在元素后面插入内容 与 content 配合使用 多用于清除浮动 -->
+    <div class="div3">伪元素 after</div>
+    <br />
+    <header>
+      <article></article>
+      <aside></aside>
+    </header>
+    <br />
+    <!-- ::selection 控制选中内容的背景色前景色 -->
+    <div class="div4">
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+      大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！大家好，欢迎来到慕课网！
+    </div>
+  </body>
+</html>

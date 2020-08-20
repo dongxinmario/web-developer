@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>属性选择器</title>
+    <style>
+      a[href] {
+        text-decoration: none;
+      }
+      /* 完全匹配 */
+      a[href='#'] {
+        color: #f00;
+      }
+      /* 包含 */
+      a[class~='two'] {
+        color: #ff0;
+      }
+      /* 匹配所有以 # 开头的 */
+      a[href^='#'] {
+        color: #0f0;
+      }
+      /* 匹配以 # 结尾 */
+      a[href$='#'] {
+        color: #00f;
+      }
+      /* 匹配包含 # */
+      a[href*='#'] {
+        color: #0ff;
+      }
+      /* 匹配以 # 或 #- 开头 */
+      a[href|='#'] {
+        color: #f0f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- attribute -->
+    <a href="./属性选择器.html">属性选择器</a>
+    <a href="#">属性选择器</a>
+    <a href="#1">属性选择器</a>
+    <a href="#2">属性选择器</a>
+    <a href="#-3">属性选择器</a>
+    <a href="#-4">属性选择器</a>
+    <a class="one two" href="#">属性选择器</a>
+    <a class="two three" href="#">属性选择器</a>
+    <a href="1#-">属性选择器</a>
+    <a href="2#-">属性选择器</a>
+    <a href="3#">属性选择器</a>
+    <a href="4#">属性选择器</a>
+  </body>
+</html>
