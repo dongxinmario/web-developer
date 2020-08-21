@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>线性渐变</title>
+    <style>
+      /* 线性渐变，从左至右 */
+      .div1 {
+        width: 800px;
+        height: 500px;
+        /* 兼容 Chrome */
+        background: -webkit-linear-gradient(left top, red, yellow, blue);
+        /* 兼容 Firefox */
+        background: -moz-linear-gradient(right bottom, red, yellow, blue);
+        /* 兼容 Opera */
+        background: -o-linear-gradient(right bottom, red, yellow, blue);
+        /* 需要 加 to end */
+        background: linear-gradient(to right bottom, red, yellow, blue);
+      }
+      /* 线性渐变，角度 */
+      .div2 {
+        width: 800px;
+        height: 500px;
+        background: -webkit-linear-gradient(135deg, red, yellow, blue);
+        background: -moz-linear-gradient(135deg, red, yellow, blue);
+        background: -o-linear-gradient(135deg, red, yellow, blue);
+        background: linear-gradient(135deg, red, yellow, blue);
+      }
+      /* 线性渐变，颜色结点分布 */
+      .div3 {
+        width: 800px;
+        height: 500px;
+        background: -webkit-linear-gradient(
+          90deg,
+          red 10%,
+          orange 15%,
+          yellow 20%,
+          green 50%,
+          blue 70%,
+          indigo 80%,
+          violet 100%
+        );
+        background: -moz-linear-gradient(
+          90deg,
+          red 10%,
+          orange 15%,
+          yellow 20%,
+          green 50%,
+          blue 70%,
+          indigo 80%,
+          violet 100%
+        );
+        background: -o-linear-gradient(
+          90deg,
+          red 10%,
+          orange 15%,
+          yellow 20%,
+          green 50%,
+          blue 70%,
+          indigo 80%,
+          violet 100%
+        );
+        background: linear-gradient(
+          90deg,
+          red 10%,
+          orange 15%,
+          yellow 20%,
+          green 50%,
+          blue 70%,
+          indigo 80%,
+          violet 100%
+        );
+      }
+      /* 线性渐变，使用透明 */
+      .div4 {
+        width: 800px;
+        height: 500px;
+        background: -webkit-linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+        background: -moz-linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+        background: -o-linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+      }
+      /* 线性渐变，重复渐变 */
+      .div5 {
+        width: 800px;
+        height: 500px;
+        background: -webkit-repeating-linear-gradient(90deg, red 0%, blue 10% red 20%);
+        background: -moz-repeating-linear-gradient(90deg, red 0%, blue 10% red 20%);
+        background: -o-repeating-linear-gradient(90deg, red 0%, blue 10%, red 20%);
+        background: repeating-linear-gradient(90deg, red 0%, blue 10%, red 20%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1"></div>
+    <br />
+    <div class="div2"></div>
+    <br />
+    <div class="div3"></div>
+    <br />
+    <div class="div4"></div>
+    <br />
+    <div class="div5"></div>
+  </body>
+</html>

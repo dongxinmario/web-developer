@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>径向渐变</title>
+    <style>
+      /* 径向渐变，颜色结点均匀分布（默认情况） */
+      div.div1 {
+        width: 800px;
+        height: 500px;
+        background: -webkit-radial-gradient(red, blue);
+        background: -moz-radial-gradient(red, blue);
+        background: -o-radial-gradient(red, blue);
+        background: radial-gradient(red, blue);
+      }
+      /* 径向渐变，颜色结点不均匀分布 */
+      div.div2 {
+        width: 800px;
+        height: 500px;
+        background: -webkit-radial-gradient(red 50%, blue 70%);
+        background: -moz-radial-gradient(red 50%, blue 70%);
+        background: -o-radial-gradient(red 50%, blue 70%);
+        background: radial-gradient(red 50%, blue 70%);
+      }
+      /* 径向渐变，设置形状 */
+      div.div3 {
+        width: 800px;
+        height: 500px;
+        background: -webkit-radial-gradient(circle, red, blue);
+        background: -moz-radial-gradient(circle, red, blue);
+        background: -o-radial-gradient(circle, red, blue);
+        background: radial-gradient(circle, red, blue);
+      }
+      /* 径向渐变，尺寸大小 */
+      div.div4 {
+        width: 300px;
+        height: 200px;
+        background: -webkit-radial-gradient(30% 70%, closest-side, red, blue);
+        background: -moz-radial-gradient(30% 70%, closest-side, red, blue);
+        background: -o-radial-gradient(30% 70%, closest-side, red, blue);
+        background: radial-gradient(30% 70%, closest-side, red, blue);
+      }
+      div.div5 {
+        width: 300px;
+        height: 200px;
+        background: -webkit-radial-gradient(30% 70%, farthest-side, red, blue);
+        background: -moz-radial-gradient(30% 70%, farthest-side, red, blue);
+        background: -o-radial-gradient(30% 70%, farthest-side, red, blue);
+        background: radial-gradient(30% 70%, farthest-side, red, blue);
+      }
+      div.div6 {
+        width: 300px;
+        height: 200px;
+        background: -webkit-radial-gradient(30% 70%, closest-corner, red, blue);
+        background: -moz-radial-gradient(30% 70%, closest-corner, red, blue);
+        background: -o-radial-gradient(30% 70%, closest-corner, red, blue);
+        background: radial-gradient(30% 70%, closest-corner, red, blue);
+      }
+      div.div7 {
+        width: 300px;
+        height: 200px;
+        background: -webkit-radial-gradient(30% 70%, farthest-corner, red, blue);
+        background: -moz-radial-gradient(30% 70%, farthest-corner, red, blue);
+        background: -o-radial-gradient(30% 70%, farthest-corner, red, blue);
+        background: radial-gradient(30% 70%, farthest-corner, red, blue);
+      }
+      /* 径向渐变，重复渐变 */
+      div.div8 {
+        width: 800px;
+        height: 500px;
+        background: -webkit-repeating-radial-gradient(red 0%, blue 10%, red 20%);
+        background: -moz-repeating-radial-gradient(red 0%, blue 10%, red 20%);
+        background: -o-repeating-radial-gradient(red 0%, blue 10%, red 20%);
+        background: repeating-radial-gradient(red 0%, blue 10%, red 20%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1"></div>
+    <br />
+    <div class="div2"></div>
+    <br />
+    <div class="div3"></div>
+    <br />
+    <div class="div4"></div>
+    <br />
+    <div class="div5"></div>
+    <br />
+    <div class="div6"></div>
+    <br />
+    <div class="div7"></div>
+    <br />
+    <div class="div8"></div>
+  </body>
+</html>
