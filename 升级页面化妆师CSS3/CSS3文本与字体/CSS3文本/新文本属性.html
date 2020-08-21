@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新文本属性</title>
+    <style>
+      /* text-align-last 属性规定如何对齐文本的最后一行 */
+      h1 {
+        width: 700px;
+        margin: 10px auto;
+        background: #abcdef;
+        /*text-align: justify;*/
+      }
+      h1:nth-child(1) {
+        text-align-last: auto;
+      }
+      h1:nth-child(2) {
+        text-align-last: left;
+      }
+      h1:nth-child(3) {
+        text-align-last: right;
+      }
+      h1:nth-child(4) {
+        text-align-last: center;
+      }
+      h1:nth-child(5) {
+        text-align-last: justify;
+      }
+      h1:nth-child(6) {
+        text-align-last: start;
+      }
+      h1:nth-child(7) {
+        text-align-last: end;
+      }
+      h1:nth-child(8) {
+        text-align-last: initial;
+      }
+      h1:nth-child(9) {
+        text-align-last: inherit;
+      }
+      h1 > span {
+        color: red;
+      }
+      /* text-overflow 属性规定当文本溢出包含元素时发生的事 */
+      h1 {
+        width: 700px;
+        margin: 10px auto;
+        background: #abcdef;
+        overflow: hidden;
+      }
+      h1:nth-child(11) {
+        text-overflow: clip;
+      }
+      h1:nth-child(12) {
+        text-overflow: ellipsis;
+      }
+      h1:nth-child(13) {
+        text-overflow: '>>';
+      }
+      h1 > span {
+        color: red;
+      }
+      h1 {
+        width: 700px;
+        margin: 10px auto;
+        background: #abcdef;
+        text-align: justify;
+      }
+      h1:nth-child(15) {
+        text-justify: auto;
+      }
+      h1:nth-child(16) {
+        text-justify: inter-word;
+      }
+      h1:nth-child(17) {
+        text-justify: inter-ideograph;
+      }
+      h1:nth-child(18) {
+        text-justify: inter-cluster;
+      }
+      h1:nth-child(19) {
+        text-justify: distribute;
+      }
+      h1:nth-child(20) {
+        text-justify: kashida;
+      }
+      h1:nth-child(21) {
+        text-justify: trim;
+      }
+      h1 > span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <span>text-align-last: auto;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-align-last: left;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-align-last: right;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-align-last: center;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-align-last: justify;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-align-last: start;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-align-last: end;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-align-last: initial;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-align-last: inherit;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <hr />
+    <h1>
+      <span>text-overflow: clip;</span
+      ><br />bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk
+    </h1>
+    <h1>
+      <span>text-overflow: ellipsis;</span
+      ><br />bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk
+    </h1>
+    <h1>
+      <!-- 只在 Firefox 下有效 -->
+      <span>text-overflow: '>>';</span
+      ><br />bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk
+    </h1>
+    <hr />
+    <h1>
+      <span>text-justify: auto;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-justify: inter-word;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-justify: inter-ideograph;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-justify: inter-cluster;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-justify: distribute;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-justify: kashida;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+    <h1>
+      <span>text-justify: trim;</span
+      ><br />将梦想悬挂于枝头，在夏季的丰盛中饱满，绽放；为梦想披星戴月，刷新生命的温度。<br />那些因梦想蜕变了的灵魂，历经时光坎坷，痛苦挣扎，依然在枝头放歌，温暖了生命如花的影子。<br />前世，储蓄梦想；今生，演绎铿锵。
+    </h1>
+  </body>
+</html>
