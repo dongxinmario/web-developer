@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition属性</title>
+    <style>
+      body {
+        background: #abcdef;
+      }
+      /* transition-property 属性 检索或设置对象中的参与过渡的属性
+      transition-duration 属性 检索或设置对象过渡的持续时间
+      transition-timing-function 属性 检索或设置对象中过渡的动画类型
+      transition-delay 属性 检索或设置对象延迟过渡的时间
+      transition 复合属性 transition: property duration timing-function delay; */
+      div.div1 {
+        width: 800px;
+        height: 800px;
+        margin: auto;
+        transform: rotate(0deg);
+        background: url(./images/imooc.png) no-repeat center center,
+          url(./images/circle_outer.png) no-repeat center center;
+        /* -webkit-transition-property: transform;
+        -moz-transition-property: transform;
+        -ms-transition-property: transform;
+        -o-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 2s;
+        -moz-transition-duration: 2s;
+        -ms-transition-duration: 2s;
+        -o-transition-duration: 2s;
+        transition-duration: 2s;
+        -webkit-transition-timing-function: ease-in-out;
+        -moz-transition-timing-function: ease-in-out;
+        -ms-transition-timing-function: ease-in-out;
+        -o-transition-timing-function: ease-in-out;
+        transition-timing-function: ease-in-out;
+        -webkit-transition-delay: 1s;
+        -moz-transition-delay: 1s;
+        -ms-transition-delay: 1s;
+        -o-transition-delay: 1s;
+        transition-delay: 1s; */
+        -webkit-transition: transform 2s ease-in-out 1s;
+        -moz-transition: transform 2s ease-in-out 1s;
+        -ms-transition: transform 2s ease-in-out 1s;
+        -o-transition: transform 2s ease-in-out 1s;
+        transition: transform 2s ease-in-out 1s;
+      }
+      div.div1:hover {
+        cursor: pointer;
+        transform: rotate(180deg);
+        /* -webkit-transition-property: transform;
+        -moz-transition-property: transform;
+        -ms-transition-property: transform;
+        -o-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 2s;
+        -moz-transition-duration: 2s;
+        -ms-transition-duration: 2s;
+        -o-transition-duration: 2s;
+        transition-duration: 2s;
+        -webkit-transition-timing-function: ease-in-out;
+        -moz-transition-timing-function: ease-in-out;
+        -ms-transition-timing-function: ease-in-out;
+        -o-transition-timing-function: ease-in-out;
+        transition-timing-function: ease-in-out;
+        -webkit-transition-delay: 1s;
+        -moz-transition-delay: 1s;
+        -ms-transition-delay: 1s;
+        -o-transition-delay: 1s;
+        transition-delay: 1s; */
+        -webkit-transition: transform 2s ease-in-out 1s;
+        -moz-transition: transform 2s ease-in-out 1s;
+        -ms-transition: transform 2s ease-in-out 1s;
+        -o-transition: transform 2s ease-in-out 1s;
+        transition: transform 2s ease-in-out 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1"></div>
+  </body>
+</html>
