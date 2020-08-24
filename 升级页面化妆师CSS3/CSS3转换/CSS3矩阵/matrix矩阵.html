@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>matrix矩阵</title>
+    <style>
+      div {
+        width: 1500px;
+        height: 250px;
+        background: #abcdef;
+        margin: 100px auto;
+      }
+      /* matrix-translate */
+      div:nth-child(1) > img {
+        transform: matrix(1, 0, 0, 1, 30, 30);
+      }
+      div:nth-child(2) > img {
+        transform: translate(30px, 30px);
+      }
+      /* matrix-scale 缩放 matrix(sx, 0, 0, sy, 0, 0)----scale(sx, sy) */
+      div:nth-child(3) > img {
+        transform: matrix(0.5, 0, 0, 0.5, 0, 0);
+      }
+      div:nth-child(4) > img {
+        transform: scale(0.5, 0.5);
+      }
+      /* matrix-rotate 旋转 matrix(cosθ, sinθ, -sinθ, cosθ, 0, 0)----rotate(θdeg) */
+      div:nth-child(5) > img {
+        transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
+      }
+      div:nth-child(6) > img {
+        transform: rotate(45deg);
+      }
+      /* 矩阵 matrix 拉伸(skew) matrix(tanθy, tanθx, 1, 0, 0)----skew(θxdeg, θydeg) */
+      div:nth-child(7) > img {
+        transform: matrix(1, 0.5774, 0.5774, 1, 0, 0);
+      }
+      div:nth-child(8) > img {
+        transform: skew(30deg, 30deg);
+      }
+      /* 矩阵 matrix 镜像对称效果
+      matrix((1-k*k)/(1+k*k), 2k/(1+k*k), (k*k-1)/(1+k*k), 0, 0) k为斜率 */
+      div:nth-child(9) > img {
+        transform: matrix(0, 1, 1, 0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div><img src="../images/sprite.jpg" /></div>
+    <div><img src="../images/sprite.jpg" /></div>
+    <div><img src="../images/sprite.jpg" /></div>
+    <div><img src="../images/sprite.jpg" /></div>
+    <div><img src="../images/sprite.jpg" /></div>
+    <div><img src="../images/sprite.jpg" /></div>
+    <div><img src="../images/sprite.jpg" /></div>
+    <div><img src="../images/sprite.jpg" /></div>
+    <div><img src="../images/sprite.jpg" /></div>
+    <div><img src="../images/sprite.jpg" /></div>
+  </body>
+</html>
