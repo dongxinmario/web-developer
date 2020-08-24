@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>translate</title>
+    <style>
+      /* translateX 水平移动 x轴正方向从左到右
+      translateY 垂直移动 y 轴正方向从上到下 */
+      div.div1 {
+        width: 1500px;
+        height: 250px;
+        background: #abcdef;
+        margin: auto;
+      }
+      div.div1 > img.img1 {
+        transform: translateX(200px);
+        transform: translateY(200px);
+        transform: translate(200px, 100px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1"><img src="../images/sprite.jpg" class="img1" /></div>
+  </body>
+</html>

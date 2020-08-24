@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>skew扭曲</title>
+    <style>
+      /* skew()方法 斜切扭曲 skewY 有效范围 -90 和 90 */
+      div {
+        width: 1500px;
+        height: 250px;
+        background: #abcdef;
+        margin: auto;
+      }
+      div > img {
+        transform: skewX(30deg);
+        transform: skewY(15deg);
+        transform: skew(15deg, 15deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div><img src="../images/sprite.jpg" /></div>
+  </body>
+</html>
