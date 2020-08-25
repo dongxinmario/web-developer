@@ -30,6 +30,9 @@
         margin: auto;
         background-repeat: no-repeat;
         background-position: center;
+        -webkit-will-change: transform;
+        -moz-will-change: transform;
+        will-change: transform;
       }
       div > .inner {
         background-image: url(./images/circle_inner.png);
@@ -107,6 +110,16 @@
       }
       div > .imooc {
         background-image: url(./images/imooc.png);
+      }
+      div:hover > .inner {
+        background-image: url(./images/circle_inner.png);
+        transform: rotateX(0deg);
+      }
+      div:hover > .middle {
+        transform: rotateY(360deg);
+      }
+      div:hover > .outer {
+        transform: rotateZ(360deg);
       }
       @keyframes circle_inner {
         from {
