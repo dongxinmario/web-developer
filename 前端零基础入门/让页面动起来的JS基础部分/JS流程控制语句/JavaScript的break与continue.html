@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>break与continue</title>
+  </head>
+  <body>
+    <script>
+      var num = 0
+      for (var i = 1; i < 10; i++) {
+        if (i % 5 == 0) {
+          // break
+          continue
+        }
+        console.log(i)
+        num++
+      }
+      console.log(num)
+    </script>
+    <script>
+      for (var n = 0; n <= 50; n += 5) {
+        if (n == 20 || n == 30) {
+          continue
+        }
+        console.log(n)
+      }
+    </script>
+  </body>
+</html>

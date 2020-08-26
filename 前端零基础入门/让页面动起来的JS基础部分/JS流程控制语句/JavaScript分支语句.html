@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript分支语句</title>
+  </head>
+  <body>
+    <!-- 
+    if 语句
+   -->
+    <script>
+      var age = prompt('请输入你的年龄')
+      if (age < 18) {
+        alert('未成年')
+      } else if (age >= 18 && age <= 70) {
+        alert('成年了，该工作了')
+      } else {
+        alert('可以退休了')
+      }
+    </script>
+    <!-- if 语句嵌套 -->
+    <script>
+      var password = prompt('请设置密码')
+      // 判断密码的长度
+      if (password.length != 6) {
+        alert('请输入6位数字密码')
+      } else {
+        // 如果密码是非数字
+        if (isNaN(password)) {
+          alert('密码必须是数字')
+        } else {
+          alert('密码设置正确')
+        }
+      }
+    </script>
+    <script>
+      var a = 'abc123'
+      var b = parseInt(a)
+      console.log(b)
+      if (b == NaN) {
+        alert(NaN)
+      } else if (b == 123) {
+        alert(123)
+      } else if (typeof b == 'number') {
+        alert('number')
+      } else {
+        alert('str')
+      }
+    </script>
+    <!-- switch 分支语句 -->
+    <script>
+      var week = new Date().getDay()
+      var weekstr = '今天是星期'
+      console.log(week) // 3 星期三
+      switch (week) {
+        case 0:
+          weekstr += '日'
+          break
+        case 1:
+          weekstr += '一'
+          break
+        case 2:
+          weekstr += '二'
+          break
+        case 3:
+          weekstr += '三'
+          break
+        case 4:
+          weekstr += '四'
+          break
+        case 5:
+          weekstr += '五'
+          break
+        default:
+          weekstr+='六'
+          break
+      }
+      document.write(weekstr)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript循环语句</title>
+  </head>
+  <body>
+    <!-- for 语句 -->
+    <script>
+      for (var i = 1; i <= 100; i++) {
+        document.write(i + ' ')
+      }
+      document.write('<hr />')
+      for (var i = 99; i >= 1; i -= 2) {
+        document.write(i + ' ')
+      }
+      console.log(i) // -1
+      document.write('<hr />')
+    </script>
+    <!-- 
+      循环嵌套
+     -->
+    <script>
+      for (var i = 1; i <= 3; i++) {
+        document.write('<br />' + i + '<br />' + '<br />')
+        for (var j = 1; j <= 5; j++) {
+          document.write(j + '<br />')
+        }
+      }
+      document.write('<hr />')
+    </script>
+    <!-- while 语句 -->
+    <script>
+      var i = 1
+      while (i <= 100) {
+        document.write(i + ' ')
+        i++
+      }
+    </script>
+    <!-- 
+      do-while 语句 至少要被执行一次
+     -->
+    <hr />
+    <script>
+      var i = 1
+      do {
+        if (i % 2 == 0) {
+          document.write(i + ' ')
+        }
+        i++
+      } while (i <= 10)
+    </script>
+    <script>
+      var sum=0,n=1
+      while (n<=100) {
+        sum+=n
+        n++
+      }
+      console.log(sum)
+    </script>
+  </body>
+</html>
