@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript操作符</title>
+  </head>
+  <body>
+    <!-- 基本运算符 + - * / % -->
+    <script>
+      var num1 = 10,
+        num2 = 20,
+        num3 = 'c',
+        num4 = '5'
+      console.log(num1 + num2) // 30
+      console.log(num1 % num2) // 10
+      console.log(num1 - num3) // NaN
+      console.log(num1 * num3) // NaN
+      console.log(num1 + num4) // 105 只有数字加字符串运算是字符串拼接
+      console.log(num1 - num4) // 5
+      console.log(num1 * num4) // 50
+      console.log('')
+    </script>
+    <!-- ++a 与 a+++ -->
+    <script>
+      var a = 10,
+        b = 5,
+        c = ++a + b,
+        d = 10,
+        e = 5,
+        f = d++ - e
+      // ++a 与 a = a + 1 等同 a++ 先返回 a 的原值做运算，再返回递增后的值
+      console.log(a) // 11
+      console.log(c) // 16
+      console.log(d) // 11
+      console.log(f) // 5
+      console.log('')
+    </script>
+    <!-- 赋值操作符 = += -= *= /= %= -->
+    <script>
+      var a = 10,
+        b = 20
+      a += 5 // a += 5 与 a = a + 5 等价
+      b %= 4
+      console.log(a) // 15
+      console.log(b) // 0
+      var str = 'hello '
+      str += 'world' // 字符串拼接
+      console.log(str) // hello world
+      console.log('')
+    </script>
+    <!-- 
+      比较操作符 < > <= >= == === != !==
+      == 相等 只比较值是否相等
+      === 全等 比较值和数据类型是否相等
+      != 不相等 比较值是否不相等
+      !== 不全等 比较值和数据类型是否不相等
+      返回值 boolean
+     -->
+    <script>
+      var a = 10,
+        b = 20,
+        str = 'hello '
+      a += 5
+      b %= 4
+      console.log(a > b) // true
+      var x = 10,
+        y = '10',
+        m = 15
+      console.log(x == y) // true
+      console.log(x === y) // false
+      console.log(y != x) // false
+      console.log(y !== x) // true
+      console.log(null == undefined) // true
+      console.log(null === undefined) // false
+      console.log('')
+    </script>
+    <!-- 
+      三元操作符
+      语法：条件 ? 代码 1 : 代码 2
+      说明：可代替简单的 if 语句，如果条件成立，执行代码 1，否则执行代码 2
+     -->
+    <script>
+      var soce = 55,
+        result = soce >= 60 ? '及格' : '不及格'
+      console.log(result)
+      console.log('')
+    </script>
+    <!-- 
+      逻辑操作符 &&与 ||或 !非
+     -->
+    <script>
+      var num1 = 10,
+        num2 = 20,
+        num3 = 30,
+        str = 'welcome',
+        bool = true,
+        n = null,
+        q
+      console.log(num1 < num2 && num2 < num3) // true
+      console.log(num1 < num2 && num2 == num3) // false
+      console.log(num1 < num2 || num2 == num3) // true
+      console.log(str && num3) // 30
+      console.log(80 && 55) // 55
+      console.log(0 && 88) // 0
+      console.log('hello' && 65 && 'abc') // abc
+      console.log(0 && 88) // 0
+      console.log('' && 0 && 30 > 20) // 空字符串
+      console.log(n && num3) // null
+      console.log(55 && true && 33 * 'abc') // NaN
+      console.log(q && true) // undefined
+      console.log('')
+      /* 
+      && 逻辑与 在有一个操作数不是布尔值的情况，不一定返回值，遵循以下规则：
+        1. 如果第一个操作数隐式类型转换后为 true，则返回第二个操作数
+        2. 如果第一个操作数隐式类型转换后为 false，则返回第一个操作数
+        3. 如果有一个操作数是 null，则返回 null
+        4. 如果有一个操作数是 NaN，则返回 NaN
+        5. 如果有一个操作数是 undefined，则返回 undefined
+      说明：情况 1、2 在两个操作数情况下；情况 3、4在前面的操作数隐式类型转换后为 true 的情况时
+      */
+    </script>
+    <!-- 
+      ||逻辑或
+     -->
+    <script>
+      console.log(55 > 88 || 33 < 66) // true
+      console.log(55 != '55' || 88 == '88') // true
+      console.log('hello' || 0) // hello
+      console.log(99 || 0 || 'abc') // 99
+      console.log('' || 88 || true) // 88
+      console.log('')
+    </script>
+    <!-- 
+      !非
+     -->
+    <script>
+      console.log(!false) // true
+      console.log(!88) // false
+      console.log(!'') // true
+      console.log(!!'') // false
+    </script>
+  </body>
+</html>

@@ -29,6 +29,34 @@
       console.log(isNaN(email)) // 返回 true 是非数值
       // isNaN()对接收的数值，先尝试转换为数值，再检测是否为非数值
       console.log(isNaN(id)) // 返回 false
+      /* 数值转换 Number() parseInt() parseFloat() */
+      console.log(typeof id)
+      id = Number(id)
+      console.log(typeof id)
+      name = Number(name) // 无法转换成数值类型
+      console.log(name) // 返回 NaN
+      var topVal = parseInt('28px') // parseINt()操作的数值必须以数字开头
+      console.log(topVal - 10)
+      console.log(parseInt('a67'))
+      console.log(parseInt('0xf', 16)) //第二个参数指定进制
+      console.log(parseFloat('12.34.56px'))
+      console.log(parseInt('00123'))
+      console.log(parseFloat('00123.25'))
+      console.log(parseFloat('0.123'))
+      /* 字符串转换 toString()和 String() */
+      var ids = 78965
+      console.log(typeof ids)
+      console.log(typeof ids.toString())
+      console.log(typeof String(ids))
+      var isStudent = true
+      var isChild = false
+      console.log(isStudent + '/' + isChild)
+      console.log(typeof isStudent)
+      console.log(isChild.toString())
+      var a = 0,
+        b = 1
+      console.log(Boolean(a) + '/' + Boolean(b))
+      // 0, null, undefined, '' 转换为布尔型，都为 false
     </script>
   </body>
 </html>
