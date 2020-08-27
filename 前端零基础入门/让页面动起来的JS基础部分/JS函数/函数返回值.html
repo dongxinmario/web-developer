@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数返回值</title>
+  </head>
+  <body>
+    <script>
+      function add(num1, num2) {
+        var sum = num1 + num2
+        return sum
+      }
+      console.log(add(3, 5))
+      alert(add(7, 8))
+      document.write(add(1, 2))
+      function myFunction(arg) {
+        if (isNaN(arg)) return
+        return arg * 2
+      }
+      console.log(myFunction('abc'))
+      console.log(myFunction(40))
+    </script>
+  </body>
+</html>

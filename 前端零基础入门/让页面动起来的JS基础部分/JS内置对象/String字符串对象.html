@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String字符串对象</title>
+  </head>
+  <body>
+    <!-- 
+    charAt(index) 返回 string 中 index 位置的字符
+    charCodeAt(index) 返回 string 中 index 位置的字符的字符编码
+   -->
+    <script>
+      var str = 'hello world'
+      console.log(str[1]) // e
+      console.log(str.charAt(1)) // e
+      console.log(str.charAt(18)) // 空字符串
+      console.log(str.charCodeAt(1)) // 101
+      console.log('')
+    </script>
+    <!-- 
+      indexOf('o') 从一个字符串中搜索给定的子字符串，返回子字符串的位置 number 找不到 返回 -1 顺序从左往右
+      lastIndexOf('o') 从一个字符串中搜索给定的子字符串，返回子字符串的位置 number 找不到 返回 -1 顺序从右往左
+     -->
+    <script>
+      var email = 'marry@163.com'
+      console.log(email.indexOf('@')) // 5
+      console.log(email.indexOf('z')) // -1
+      console.log(email.lastIndexOf('o')) // 1
+      console.log('')
+    </script>
+    <!-- 
+      字符串截取方法
+      方法一：slice(start, end) 截取字符串 第一个参数为负，index即为字符串长度值加上该值
+      方法二：substring(start, end) 参数为负，被转换为 0
+      方法三：substr(start, length) start 为负，负值与字符串长度相加 length 为负，返回空字符串
+      方法四：split(separator) 把字符串分割成字符串数组 返回值 Array separator 必需 分隔符
+      方法五：replace()
+      方法六：toUpperCase() 把字符串转换为大写
+      方法七：toLowerCase() 把字符串转换成小写
+     -->
+    <script>
+      var str = 'hello world'
+      console.log(str.slice(7, 10)) // orl
+      console.log(str.slice(-4, 10)) // orl
+      console.log(str.slice(-7, -2)) // (4, 9) o wor
+      console.log(str.substring(1, 4)) // ell
+      console.log(str.substring(-7, 5)) // (0, 5) hello
+      console.log(str.substring(-3, -6)) // (0, 0) 空字符串
+      console.log(str.substring(2, -4)) // (0, 2) he
+      console.log(str.substr(6, 3)) // wor
+      console.log(str.substr(-5, 4)) // (6, 4) worl
+      console.log(str.substr(3, -4)) // 空字符串
+      console.log('')
+    </script>
+    <script>
+      var str = '慕课网，攻城狮的黄埔军校'
+      console.log(str.substr(-8, 8))
+    </script>
+    <!-- 
+      综合应用
+     -->
+    <script>
+      //  获取扩展名
+      var url = 'https://www.baidu.com/index.txt'
+      function getFileFormat() {
+        var pos = url.lastIndexOf('.')
+        return url.substr(pos)
+      }
+      console.log(getFileFormat(url))
+    </script>
+    <script>
+      console.log('')
+      // split()
+      var str = 'welcome-to-beijing'
+      console.log(str.split('-')) // ["welcome", "to", "beijing"]
+      // replace()
+      var tel = '010-126656,400-100-823823,010-599565565'
+      console.log(tel.replace(',', '  ')) // 仅替换第一个
+    </script>
+    <script>
+      console.log('')
+      var str = 'hello world'
+      var str1 = str.toUpperCase()
+      console.log(str1)
+      console.log(str1.toLowerCase())
+      console.log('')
+      // 驼峰命名函数
+      function camelBack(str) {
+        var arr = str.split('-'),
+          newWord = arr[0]
+        for (var i = 1, len = arr.length; i < len; i++) {
+          var word = arr[i]
+          newWord += word.charAt(0).toUpperCase() + word.substr(1)
+          // console.log(newWord)
+        }
+        return newWord
+      }
+      var camelFormat = camelBack('border-left-color')
+      console.log(camelFormat)
+    </script>
+  </body>
+</html>

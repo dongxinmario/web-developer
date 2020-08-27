@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arguments实例</title>
+  </head>
+  <body>
+    <script>
+      // 求任意一组数的平均值
+      function getAvg() {
+        var sum = 0,
+          len = arguments.length
+        for (var i = 0; i < len; i++) {
+          sum += arguments[i]
+        }
+        return sum / len
+      }
+      var avg = getAvg(5, 66, 45, 32, 88, 24, 40,199,3000)
+      console.log(avg)
+    </script>
+  </body>
+</html>

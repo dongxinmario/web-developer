@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arguments</title>
+  </head>
+  <body>
+    <script>
+      function inner() {
+        console.log(arguments)
+        console.log(arguments.length) // 2
+        console.log(arguments[0]) // 10
+      }
+      inner(10, 5)
+      function add(num1, num2) {
+        console.log(num1) // 55
+        arguments[0] = 99
+        console.log(num1) // 99
+      }
+      add(55, 88)
+    </script>
+  </body>
+</html>
