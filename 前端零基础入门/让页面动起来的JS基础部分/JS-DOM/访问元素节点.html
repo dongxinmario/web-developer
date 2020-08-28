@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>访问元素节点</title>
+    <script>
+      // 给 window 对象添加事件监听 onload 表示页面都加载完毕 延迟执行
+      window.onload = function () {
+        var box1 = document.getElementById('box1')
+        var box2 = document.getElementById('box2')
+        console.log(box1.nodeType) // 1
+        console.log(typeof box1) // object
+        console.log(box1)
+        console.log(box2)
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 
+    方法
+      document.getElementById() 通过 id 得到元素
+      document.getElementsByTagName() 通过标签名得到元素数组
+      document.getElementsByClassName() 通过类名得到元素数组
+      document.querySelector() 通过选择器得到元素 只能得到页面上的一个元素，若有多个元素符合条件m，则只能得到第一个元素
+      document.querySelectorAll() 通过选择器得到元素数组
+   -->
+    <div id="box1">我是盒子1</div>
+    <div id="box2">我是盒子2</div>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <div id="box3">
+      <p>我是段落</p>
+      <p>我是段落</p>
+      <p>我是段落</p>
+      <p>我是段落</p>
+      <p>我是段落</p>
+    </div>
+    <div id="box4">
+      <p>我是段落</p>
+      <p class="spec">我是段落</p>
+      <p>我是段落</p>
+      <p>我是段落</p>
+      <p>我是段落</p>
+    </div>
+    <div id="box5">
+      <p>我是段落A</p>
+      <p id="para">我是段落B</p>
+      <p>我是段落C</p>
+    </div>
+    <script>
+      var ps = document.getElementsByTagName('p')
+      console.log(ps)
+      var box3 = document.getElementById('box3')
+      var ps_inbox3 = box3.getElementsByTagName('p')
+      console.log(ps_inbox3)
+    </script>
+    <script>
+      var the_p = document.querySelector('#box4 .spec')
+      console.log(the_p)
+      var the_ps = document.querySelectorAll('#box4 p')
+      console.log(the_ps)
+    </script>
+    <script>
+      var box5 = document.getElementById('box5')
+      var para = document.getElementById('para')
+      // 所有子节点
+      console.log(box5.childNodes)
+      // 所有的元素子节点（IE9开始兼容）
+      console.log(box5.children.para)
+      // 第一个子节点
+      console.log(box5.firstChild.nodeType)
+      // 第一个元素子节点(IE9开始兼容)
+      console.log(box5.firstElementChild)
+      // 最后一个子节点
+      console.log(box5.lastChild)
+      // 最后一个元素子节点(IE9开始兼容)
+      console.log(box5.lastElementChild)
+      // 父节点
+      console.log(para.parentNode)
+      // 前一个兄弟节点
+      console.log(para.previousSibling)
+      // 前一个兄弟元素节点(IE9开始兼容)
+      console.log(para.previousElementSibling)
+      // 后一个兄弟节点
+      console.log(para.nextSibling)
+      // 后一个兄弟元素节点(IE9开始兼容)
+      console.log(para.nextElementSibling)
+    </script>
+  </body>
+</html>

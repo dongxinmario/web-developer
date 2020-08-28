@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>创建九九乘法表</title>
+    <style>
+      td {
+        width: 120px;
+        height: 20px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <table cellspacing="0" id="myTable"></table>
+    <script>
+      var myTable = document.getElementById('myTable')
+      var tableName = document.createElement('caption')
+      myTable.appendChild(tableName)
+      tableName.innerText = '九九乘法表'
+      tableName.style.fontSize = '24px'
+      for (var i = 1; i <= 9; i++) {
+        var tr = document.createElement('tr')
+        tr.align = 'center'
+        for (var j = 1; j <= i; j++) {
+          var td = document.createElement('td')
+          td.innerText = i + ' X ' + j + ' = ' + i * j
+          tr.appendChild(td)
+        }
+        myTable.appendChild(tr)
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>节点的创建移除克隆</title>
+  </head>
+  <body>
+    <div id="box1">
+      <p>我是原本的段落0</p>
+      <p>我是原本的段落1</p>
+      <p>我是原本的段落2</p>
+    </div>
+    <script>
+      var oBox1 = document.getElementById('box1')
+      // 创建孤儿节点
+      var oP = document.createElement('p')
+      var oPs = document.getElementsByTagName('p')
+      // 设置内部文字
+      oP.innerHTML = '我是新来的文本0'
+      // 上树
+      oBox1.appendChild(oP)
+      oBox1.insertBefore(oP, oPs[0])
+    </script>
+  </body>
+</html>

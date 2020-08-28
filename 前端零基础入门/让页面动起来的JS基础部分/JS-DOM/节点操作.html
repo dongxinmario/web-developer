@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>节点操作</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    改变元素节点的内容 innerHTML innerText
+    innerHTML 属性能以 HTML 语法设置节点中的内容
+    innerText 属性只能以纯文本的形式设置节点中的内容
+   -->
+    <div id="box1"></div>
+    <hr />
+    <div class="box" id="box2">你好</div>
+    <hr />
+    <img src="./images/1.jpg" id="img1" />
+    <hr />
+    <a href="https://www.baidu.com/" id="link1">百度</a>
+    <hr />
+    <div id="box3"></div>
+    <script>
+      var oBox1 = document.getElementById('box1')
+      oBox1.innerHTML = '慕课网'
+      oBox1.innerHTML = '<ul><li>牛奶</li><li>咖啡</li></ul>'
+      oBox1.innerText = '慕课网'
+      oBox1.innerText = '<ul><li>牛奶</li><li>咖啡</li></ul>'
+    </script>
+    <script>
+      // 改变 CSS 样式
+      var oBox2 = document.getElementById('box2')
+      oBox2.style.backgroundColor = 'rgb(100,200,123)'
+      oBox2.style.backgroundImage = 'url(https://www.imooc.com/static/img/index/logo-recommended.png)'
+      oBox2.style.backgroundSize = 'contain'
+      oBox2.style.fontSize = '42px'
+    </script>
+    <script>
+      // 改变元素属性
+      var oImg1 = document.getElementById('img1')
+      var oLink1 = document.getElementById('link1')
+      oImg1.src = './images/2.jpg'
+      oLink1.href = 'https://class.imooc.com/lesson/1570#mid=35645'
+      oLink1.innerText = '慕课网'
+    </script>
+    <script>
+      // 非 W3C 属性 setAttribute('n', 11) getAttribute('n')
+      var oBox3 = document.getElementById('box3')
+      oBox3.setAttribute('data-n', 10)
+      var n = oBox3.getAttribute('data-n')
+      console.log(n)
+    </script>
+  </body>
+</html>

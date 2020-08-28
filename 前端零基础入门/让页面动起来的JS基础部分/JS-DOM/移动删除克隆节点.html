@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>移动删除克隆节点</title>
+  </head>
+  <body>
+    <div id="box1">
+      <p id="para">我是段落</p>
+    </div>
+    <div id="box2">
+      <p>我是box2原有段落0</p>
+      <p>我是box2原有段落1</p>
+      <p>我是box2原有段落2</p>
+      <p>我是box2原有段落3</p>
+      <p>我是box2原有段落4</p>
+    </div>
+    <script>
+      // 将 box1 中的 p 标签移至 box2 中
+      var box1 = document.getElementById('box1')
+      var box2 = document.getElementById('box2')
+      var para = document.getElementById('para')
+      var ps_inbox2 = box2.getElementsByTagName('p')
+      // box2.appendChild(para)
+      box2.insertBefore(para, ps_inbox2[0])
+      // 删除节点
+      box2.removeChild(ps_inbox2[5])
+      // 克隆节点
+      var box3 = box2.cloneNode()
+      var box3 = box2.cloneNode(true)
+      box1.appendChild(box3)
+    </script>
+  </body>
+</html>
