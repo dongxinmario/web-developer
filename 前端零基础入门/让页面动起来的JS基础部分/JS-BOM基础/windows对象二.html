@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window对象二</title>
+  </head>
+  <body>
+    <!-- window.open window.close -->
+    <input type="button" value="退 出" id="quit" />
+    <script>
+      window.onload = function () {
+        window.open(
+          './windows对象一.html',
+          'window对象一',
+          'width:400,height:200,left=0,top=0,toolbar=no,menubar=no,scrollbars=no,location=no,status=no'
+        )
+        var quit = document.getElementById('quit')
+        quit.onclick = function () {
+          window.close()
+        }
+      }
+    </script>
+  </body>
+</html>

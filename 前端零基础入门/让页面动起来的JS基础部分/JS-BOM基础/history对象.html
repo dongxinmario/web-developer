@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>history对象</title>
+  </head>
+  <body>
+    <div class="box1">
+      <input type="text" placeholder="请输入搜索关键字" id="key" />
+      <input type="button" value="搜索" id="search" />
+    </div>
+    <a href="#" id="go">跳转</a>
+    <a href="./location对象方法.html">location对象方法</a>
+    <input type="button" value="前进" id="forward" />
+    <script>
+      var forward = document.getElementById('forward')
+      forward.onclick = function () {
+        // history.forward()
+        history.go(1)
+      }
+    </script>
+  </body>
+</html>

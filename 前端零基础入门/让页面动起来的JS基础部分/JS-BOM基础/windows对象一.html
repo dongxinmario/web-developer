@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>windows对象一</title>
+  </head>
+  <body>
+    <!-- window 对象的方法 alert confirm prompt -->
+    <script>
+      // var age = 15 等价于 window.age = 15
+      var age = 15
+      function sayAge() {
+        console.log('我的年龄是：' + window.age)
+      }
+      sayAge()
+      window.userName = 'duke'
+      window.sayName = function () {
+        console.log('我是' + this.userName)
+      }
+      window.sayName()
+    </script>
+    <!-- alert -->
+    <script>
+      var a = 12
+      function say() {
+        alert(a)
+      }
+      say()
+    </script>
+    <!-- confirm prompt -->
+    <div id="box1">
+      <span>iphone11Pro</span>
+      <input type="button" value="删除" id="btn" />
+    </div>
+    <script>
+      var btn = document.getElementById('btn')
+      btn.onclick = function () {
+        var result = window.confirm('确定要删除？')
+        if (result) {
+          document.getElementById('box1').style.display = 'none'
+        }
+      }
+      var message = prompt('请输入星座', '射手座')
+      console.log(message)
+    </script>
+  </body>
+</html>

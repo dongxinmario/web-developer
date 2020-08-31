@@ -133,7 +133,7 @@
       box4.onmouseleave = function () {
         console.log('我离开了')
       }
-      box4.onmouseout=function(){
+      box4.onmouseout = function () {
         console.log('我出来了，在leave之前')
       }
       // 浏览器窗口被改变
@@ -144,9 +144,13 @@
       window.onscroll = function () {
         console.log('我被拖动了')
       }
-      box4.onscroll=function(){
+      box4.onscroll = function () {
         console.log('我被拖动了')
       }
     </script>
+    <!-- 
+      1、onmouseleave、onmouseenter，鼠标进入到指定元素区域内触发事件，不支持冒泡，不包含子元素的区域。
+      2、onmouseout、onmouseover、鼠标进入指定元素触发事件，含子元素区域。
+     -->
   </body>
 </html>

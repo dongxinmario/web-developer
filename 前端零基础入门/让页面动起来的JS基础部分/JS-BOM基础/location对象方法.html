@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>location对象方法</title>
+  </head>
+  <body>
+    <input type="button" value="刷新" id="reload" />
+    <p><input type="button" value="后退" id="btn" /></p>
+    <script>
+      /* setTimeout(() => {
+        // location.href = './location对象属性.html'
+        // location.replace('./location对象属性.html')
+      }, 1000) */
+      document.getElementById('reload').onclick = function () {
+        location.reload(true) // 有 true 从服务器端进行，否则可能在缓存中进行
+      }
+      var btn = document.getElementById('btn')
+      btn.onclick = function () {
+        // history.back()
+        history.go(-1)
+      }
+    </script>
+  </body>
+</html>

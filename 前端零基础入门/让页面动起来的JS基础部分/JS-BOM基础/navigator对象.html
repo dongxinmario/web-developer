@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navigator对象</title>
+  </head>
+  <body>
+    <!-- 获取浏览器信息 -->
+    <script>
+      var explorer = navigator.userAgent
+      console.log(explorer)
+    </script>
+    <script>
+      // 检测浏览器类型
+      function getBrowser() {
+        var explorer = navigator.userAgent.toLowerCase()
+        if (explorer.indexOf('msie') > -1) {
+          browser = 'IE'
+        } else if (explorer.indexOf('chrome') > -1) {
+          browser = 'Chrome'
+        } else if (explorer.indexOf('opera') > -1) {
+          browser = 'Opera'
+        } else if (explorer.indexOf('safari') > -1) {
+          browser = 'Safari'
+        }
+        return browser
+      }
+      var explorer = getBrowser()
+      console.log(explorer)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>定时器</title>
+  </head>
+  <body>
+    <!-- 
+    超时调用
+    setTimeout(code,millisec) 在指定毫秒数之后调用函数或计算表达式
+   -->
+    <script>
+      // 超时调用
+      var timeout1 = setTimeout(() => {
+        alert('hello')
+      }, 4000)
+      // 取消超时调用
+      clearTimeout(timeout1)
+    </script>
+    <!-- 
+      间歇调用
+      setInterval(code,millisec) 每隔指定时间执行一次代码
+     -->
+    <script>
+      var interval1 = setInterval(() => {
+        console.log('你好')
+      }, 1000)
+      setTimeout(() => {
+        clearInterval(interval1)
+      }, 10000)
+      var num = 1,
+        max = 10,
+        timer = null
+      timer = setInterval(() => {
+        console.log(num)
+        num++
+        if (num > max) {
+          clearInterval(timer)
+        }
+      }, 1000)
+    </script>
+  </body>
+</html>
