@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>鼠标事件</title>
+    <style>
+      .box2 {
+        padding: 50px;
+      }
+      .left,
+      .tip {
+        float: left;
+      }
+      .left {
+        margin-right: 10px;
+      }
+      .tip {
+        display: none;
+        font-size: 14px;
+      }
+      .box4 {
+        width: 200px;
+        height: 200px;
+        background: #f00;
+        overflow: auto;
+      }
+      body {
+        height: 2000px;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var box1 = document.getElementById('box1')
+        var phone = document.getElementById('phone'),
+          tip = document.getElementById('tip')
+        var clicked = function () {
+          console.log('我被点击了')
+        }
+        box1.onclick = clicked
+        var onfocus = function () {
+          tip.style.display = 'block'
+        }
+        var onblur = function () {
+          var phoneVal = this.value
+          if (phoneVal.length == 11 && isNaN(phoneVal) == false) {
+            tip.style.display = 'block'
+            // tip.innerText = '手机号码输入正确'
+            tip.innerHTML = '<img src="./images/right.png" />'
+          } else {
+            tip.style.display = 'block'
+            // tip.innerText = '手机号码输入错误'
+            tip.innerHTML = "<img src='./images/error.png' />"
+          }
+        }
+        phone.onfocus = onfocus
+        phone.onblur = onblur
+      }
+    </script>
+    <script>
+      window.onload = init
+      function init() {
+        var menu = document.getElementById('menu')
+        menu.onchange = function () {
+          var bgcolor = this.value
+          // var bgcolor=menu.options[menu.selectedIndex].value
+          if (bgcolor == '') {
+            document.body.style.background = '#fff'
+          } else {
+            document.body.style.background = bgcolor
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- onclick -->
+    <div id="box1">这是一个DIV</div>
+    <hr />
+    <!-- onfocus 和 onblur -->
+    <div class="box2">
+      <div class="left">
+        <input type="text" class="phone" id="phone" placeholder="请输入手机号码" />
+      </div>
+      <div class="tip" id="tip">请输入有效的手机号码</div>
+    </div>
+    <hr />
+    <!-- onchange -->
+    <div class="box3">
+      请选择喜欢的颜色：
+      <select name="" id="menu">
+        <option value="">请选择</option>
+        <option value="#f00">红色</option>
+        <option value="#0f0">绿色</option>
+        <option value="#00f">蓝色</option>
+        <option value="#ff0">黄色</option>
+        <option value="#ccc">灰色</option>
+      </select>
+    </div>
+    <hr />
+    <!-- onmousedown onmouseup onmouseover onmouseleave onresize onscroll -->
+    <div class="box4" id="box4">
+      <p>拖动</p>
+      <p>拖动</p>
+      <p>拖动</p>
+      <p>拖动</p>
+      <p>拖动</p>
+      <p>拖动</p>
+      <p>拖动</p>
+      <p>拖动</p>
+      <p>拖动</p>
+      <p>拖动</p>
+      <p>拖动</p>
+      <p>拖动</p>
+    </div>
+    <script>
+      var box4 = document.getElementById('box4')
+      box4.onmousedown = function () {
+        console.log('我被按下了')
+      }
+      box4.onmousemove = function () {
+        console.log('我被移动了')
+      }
+      box4.onmouseup = function () {
+        console.log('我被松开了')
+      }
+      box4.onclick = function () {
+        console.log('我被点击了')
+      }
+      box4.onmouseover = function () {
+        console.log('我被进入了')
+      }
+      box4.onmouseleave = function () {
+        console.log('我离开了')
+      }
+      box4.onmouseout=function(){
+        console.log('我出来了，在leave之前')
+      }
+      // 浏览器窗口被改变
+      window.onresize = function () {
+        console.log('我的尺寸被改变了')
+      }
+      // 拖动滚动条
+      window.onscroll = function () {
+        console.log('我被拖动了')
+      }
+      box4.onscroll=function(){
+        console.log('我被拖动了')
+      }
+    </script>
+  </body>
+</html>
