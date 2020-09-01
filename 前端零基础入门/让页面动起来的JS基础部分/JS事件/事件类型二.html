@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>事件类型</title>
+  </head>
+  <body>
+    <input type="text" id="myText" />
+    <ul id="myList">
+      <li id="li">item 1</li>
+      <li id="li1">item 2</li>
+      <li>item 3</li>
+    </ul>
+    <script>
+      var EventUtil = {
+        addHandler: function (element, type, handler) {
+          //绑定事件
+          //Chrome Firefox IE9等     addEventListener
+          //IE8及IE8以下的浏览器     attachEvent
+          if (element.addEventListener) {
+            element.addEventListener(type, handler, false)
+          } else if (element.attachEvent) {
+            element.attachEvent('on' + type, handler)
+          } else {
+            element['on' + type] = handler
+          }
+        },
+        getCharCode: function (event) {
+          if (typeof event.charCode == 'number') {
+            return event.charCode
+          } else {
+            event.keyCode
+          }
+        },
+        removeHandler: function (element, type, handler) {
+          //移除事件
+          //Chrome Firefox IE9等
+          //IE8及IE8以下的浏览器
+          if (element.removeEventListener) {
+            element.removeEventListener(type, handler, false)
+          } else if (element.detachEvent) {
+            element.detachEvent('on' + type, handler)
+          } else {
+            element['on' + type] = handler
+          }
+        },
+        getTarget: function (event) {
+          return event.target || event.srcElement
+        },
+        preventDefault: function (event) {
+          if (event.preventDefault) {
+            event.preventDefault()
+          } else {
+            event.returnValue = false
+          }
+        },
+        stopPropagation: function (event) {
+          if (event.stopPropagation) {
+            event.stopPropagation()
+          } else {
+            event.cancelBubble = true
+          }
+        },
+        getCharCode: function (event) {
+          if (typeof event.charCode == 'number') {
+            return event.charCode
+          } else {
+            return event.keyCode
+          }
+        },
+      }
+      var myText = document.getElementById('myText')
+      // 键码，任意键触发
+      /* EventUtil.addHandler(myText, 'keydown', function (event) {
+        console.log(event.keyCode)
+      }) */
+      // 释放某键时触发
+      /* EventUtil.addHandler(myText, 'keyup', function (event) {
+        console.log(event.keyCode)
+      }) */
+      // ASCII码，字符键触发
+      /* EventUtil.addHandler(myText, 'keypress', function (event) {
+        console.log(event.keyCode)
+        console.log(event.charCode)
+      }) */
+      /* EventUtil.addHandler(myText, 'textInput', function (event) {
+        console.log(event.data)
+      }) */
+      // myList 中任意元素被删除就会触发
+      /* EventUtil.addHandler(myList,'DOMNodeRemoved',function(event){
+        console.log(11111)
+      })
+      document.body.removeChild(myText) */
+      // DOM 结构中发生任何变化都会触发
+      /* EventUtil.addHandler(document, 'DOMSubtreeModified', function (event) {
+        console.log(111111)
+      }) */
+      // 从文档中移除之前触发
+      /* EventUtil.addHandler(myList,'DOMNodeRemovedFromDocument',function(event){
+        console.log(111111)
+      })
+      document.body.removeChild(myList) */
+      var item = document.createElement('li')
+      var myList = document.getElementById('myList')
+      /* EventUtil.addHandler(myList, 'DOMNodeInserted', function (event) {
+        console.log(1111)
+      }) */
+      /* EventUtil.addHandler(document, 'DOMSubtreeModified', function (event) {
+        console.log(111111)
+      }) */
+      // 从文档中添加之前被触发
+      /* EventUtil.addHandler(item, 'DOMNodeInsertedIntoDocument', function (event) {
+        console.log(111111)
+      })
+      myList.appendChild(item) */
+      //在DOM树结构之后就会触发，不理会图像。javascript文件、css文件或其他资源是否已经下载
+      // DOMContentLoaded  load
+      /* EventUtil.addHandler(document,'DOMContentLoaded',function(event){
+        console.log('DOMContentLoaded速度快于load事件')
+      }) */
+      //readstatechange 支持IE、firfox、opera，提供文档或者元素加载过程，但是很难预料与load事件一起使用时候
+      //1、document.readState == uninitialized  尚未初始化
+      //2、loading 对象正在加载数据
+      //3、interactive  可以操作对象，单还没有完全加载
+      //4、对象已经加载完毕
+      EventUtil.addHandler(document, 'readstatechange', function (event) {
+        console.log(111111)
+        //情绪化，限制IE.很难预料
+      })
+      //hashchange事件 一定给window添加，#后面的值变化
+      EventUtil.addHandler(window, 'hashchange', function (event) {
+        console.log(event.oldURL + ':' + event.newURL)
+      })
+    </script>
+  </body>
+</html>

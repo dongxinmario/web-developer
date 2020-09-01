@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>事件定义和解锁</title>
+  </head>
+  <body>
+    <!-- 
+      为特定事件定义监听函数三种方式
+        1. 直接在 HTML 中定义元素的事件相关属性 html 中写 js 代码 强耦合 不利于复用代码 xxx
+        2. DOM0级事件 在 JavaScript 中为元素的事件相关属性赋值 松耦合 html 和 js 代码分离 只能绑定一个事件类型 所有浏览器
+        3. DOM2级事件 高级事件处理方式，一个事件可以绑定多个监听函数 松耦合 可以绑定多个事件 事件捕获和事件冒泡 chrome firefox ie9等
+          addEventListener(event, function, userCapture) userCapture 可选，布尔值，指定事件是否在捕获或冒泡阶段执行
+      事件解锁
+        removeEventListener()
+     -->
+    <button onclick="alertWindow()">点击我</button>
+    <button id="btn">第二种事件绑定方式-DOM0级</button>
+    <button id="btn2">第三种事件绑定方式-DOM2级</button>
+    <script>
+      /* 
+    1. 事件对象 button
+    2. 事件对象绑定一个事件类型
+    3. 事件句柄
+    */
+      //  第一种
+      function alertWindow() {
+        alert('我被点击了')
+      }
+      function DOM0() {
+        alert('DOM0级事件绑定方式')
+      }
+      // DOM0级事件
+      var btn = document.getElementById('btn')
+      btn.onclick = DOM0
+      // DOM2级事件
+      var btn2 = document.getElementById('btn2')
+      function dom2() {
+        alert('DOM2级事件绑定方式')
+      }
+      btn2.addEventListener('click', dom2, false)
+      /* btn2.addEventListener(
+        'click',
+        function () {
+          alert('DOM2级事件绑定方式的第二事件')
+        },
+        false
+      ) */
+      // 事件解绑
+      btn2.removeEventListener('click', dom2)
+    </script>
+  </body>
+</html>

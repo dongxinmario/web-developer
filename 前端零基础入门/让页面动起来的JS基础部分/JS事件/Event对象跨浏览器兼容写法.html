@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event对象跨浏览器兼容写法</title>
+  </head>
+  <body>
+    <div id="parent">
+      <div id="child">点击我</div>
+    </div>
+    <a href="https://www.baidu.com/" id="a">baidu</a>
+    <script>
+      var EventUtil = {
+        addhandler: function (element, type, handler) {
+          if (element.addEventListener) {
+            element.addEventListener(type, handler, false)
+          } else if (element.attachEvent) {
+            element.attachEvent('on' + type, handler)
+          } else {
+            element['on' + type] = null
+          }
+        },
+        removehandle: function (element, type, handler) {
+          if (element.removeEventListener) {
+            element.removeEventListener(type, handler, false)
+          } else if (element.detachEvent) {
+            element.detachEvent('on' + type, handler)
+          } else {
+            element['on' + type] = handler
+          }
+        },
+        getTarget: function (event) {
+          return event.target || event.srcElement
+        },
+        preventDefault: function (event) {
+          if (event.preventDefault) {
+            event.preventDefault()
+          } else {
+            event.returnValue = false
+          }
+        },
+        stopPropagation: function (event) {
+          if (event.stopPropagation) {
+            event.stopPropagation()
+          } else {
+            event.cancelBubble = true
+          }
+        }
+      }
+      var parent = document.getElementById('parent')
+      EventUtil.addhandler(parent, 'click', function (event) {
+        console.log('parent被触发了')
+      })
+      var child = document.getElementById('child')
+      EventUtil.addhandler(child, 'click', function (event) {
+        var target = EventUtil.getTarget(event)
+        console.log(target)
+        EventUtil.stopPropagation(event)
+      })
+      var a = document.getElementById('a')
+      EventUtil.addhandler(a, 'click', function (event) {
+        console.log('child被触发了')
+        EventUtil.preventDefault(event)
+        console.log('baidu')
+      })
+    </script>
+  </body>
+</html>

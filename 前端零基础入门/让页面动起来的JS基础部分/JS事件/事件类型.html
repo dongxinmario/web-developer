@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>事件类型</title>
+    <style>
+      body {
+        height: 1000px;
+      }
+      input {
+        width: 300px;
+        height: 50px;
+      }
+      div {
+        padding: 20px 0;
+        background: #666;
+      }
+      #myDiv {
+        width: 500px;
+        height: 500px;
+        background: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="input" type="" name="" />
+    <div id="div">
+      <button id="myBtn">点击我</button>
+    </div>
+    <div id="myDiv"></div>
+    <!--<script type="text/javascript" src="jquery.js"></script>-->
+    <script>
+      var EventUtil = {
+        addhandler: function (element, type, handler) {
+          if (element.addEventListener) {
+            element.addEventListener(type, handler, false)
+          } else if (element.attachEvent) {
+            element.attachEvent('on' + type, handler)
+          } else {
+            element['on' + type] = null
+          }
+        },
+        removehandle: function (element, type, handler) {
+          if (element.removeEventListener) {
+            element.removeEventListener(type, handler, false)
+          } else if (element.detachEvent) {
+            element.detachEvent('on' + type, handler)
+          } else {
+            element['on' + type] = handler
+          }
+        },
+        getTarget: function (event) {
+          return event.target || event.srcElement
+        },
+        preventDefault: function (event) {
+          if (event.preventDefault) {
+            event.preventDefault()
+          } else {
+            event.returnValue = false
+          }
+        },
+        stopPropagation: function (event) {
+          if (event.stopPropagation) {
+            event.stopPropagation()
+          } else {
+            event.cancelBubble = true
+          }
+        },
+      }
+      // UI事件
+      // 1、load
+      // 当页面完全加载后在window上面触发
+      //EventUtil.addHandler(window, "load", function(e) {
+      //alert("Loaded!");
+      //});
+      // img标签加载完毕
+      //var image = document.getElementById("img");
+      //EventUtil.addHandler(image, "load", function(e) {
+      //alert("图片加载完毕    ");
+      //})
+      //image.src = "1.png";
+
+      // 图片预加载
+      //var image = new Image();
+      //EventUtil.addHandler(image, "load", function(event){
+      //	alert("Image loaded!");
+      //});
+      //image.src = "smile.png";
+
+      // js动态加载完毕
+      //var script = document.createElement("script");
+      //EventUtil.addHandler(script, "load", function(event){
+      //alert("js Loaded");
+      //});
+      //script.src = "jquery.js";
+      //document.body.appendChild(script);
+
+      // css动态加载完毕
+      //var link = document.createElement("link");
+      //link.type = "text/css";
+      //link.rel = "stylesheet";
+      //EventUtil.addHandler(link, "load", function(event){
+      //alert("css Loaded");
+      //});
+      //link.href = "example.css";
+      //document.getElementsByTagName("head")[0].appendChild(link);
+
+      // unload事件 用户从一个页面切换到另一个页面
+      //EventUtil.addHandler(window, "unload", function(event){
+      //alert("Unloaded");
+      //});
+
+      // resize事件
+      //EventUtil.addHandler(window, "resize", function(event){
+      //alert("Resized");
+      //});
+
+      // scroll事件.  主要针对新旧浏览器
+      //EventUtil.addHandler(window, "scroll", function(event){
+      //alert(111)
+      //});
+
+      // 焦点事件
+      //1、blur
+      var input = document.getElementById('input')
+      //EventUtil.addHandler(input, "blur", function(event){
+      //alert("元素失去焦点的时候触发");
+      //});
+      //2、focus  不支持冒泡，获取焦点
+      //EventUtil.addHandler(input, "focus", function(event){
+      //console.log("元素获取焦点的时候触发");
+      //});
+
+      //3、 focusin 同focus一样
+      //EventUtil.addHandler(input, "focusin", function(event){
+      //console.log("元素获取焦点的时候触发,支持事件浏览器是IE5.5+,Safari5.1+，chrome等");
+      //});
+      //4、 focuout 同blur一样
+      //EventUtil.addHandler(input, "focuout", function(event){
+      //console.log("元素失去焦点的时候触发,支持事件浏览器是IE5.5+,Safari5.1+，chrome等");
+      //});
+
+      //EventUtil.addHandler(input, "DOMFocusIn", function(event){
+      //alert("元素获取焦点的时候触发");
+      //});
+      //EventUtil.addHandler(input, "DOMFocuOut", function(event){
+      //alert("元素失去焦点的时候触发");
+      //});
+
+      //鼠标事件
+      var myBtn = document.getElementById('myBtn')
+      //EventUtil.addHandler(myBtn, "click", function(event){
+
+      //})
+      //EventUtil.addHandler(myBtn, "dblclick", function(event){
+      //alert(111111)
+      //})
+      //鼠标按下时候触发的事件
+      //EventUtil.addHandler(myBtn, "mousedown", function(event){
+      //alert("mousedown");
+      //console.log(event.button)   //区分浏览器
+      //console.log("mousedown")
+      //})
+      //EventUtil.addHandler(myBtn, "mouseup", function(event){
+      //console.log("mouseup")
+      //})
+
+      //mousedown+mouseup=click
+
+      //EventUtil.addHandler(myBtn, "mousemove", function(event){
+      //console.log("mousemove")
+      //})
+      //			//离开目标元素的时候执行
+      //			EventUtil.addHandler(myBtn, "mouseout", function(event){
+      //				console.log("mouseout")
+      //			})
+      //			//进入目标元素的时候执行
+      //			EventUtil.addHandler(myBtn, "mouseover", function(event){
+      //				console.log("mouseover")
+      //			})
+      //			//只能进入目标元素时候才去触发
+      //			EventUtil.addHandler(myBtn, "mouseenter", function(event){
+      //				console.log("mouseenter")
+      //			})
+      //			//只能离开目标元素时候才去触发
+      //			EventUtil.addHandler(myBtn, "mouseleave", function(event){
+      //				console.log("mouseleave ")
+      //			})
+      //			var div = document.getElementById("div");
+      //			//离开目标元素或者其子元素的时候执行
+      //			EventUtil.addHandler(div, "mouseout", function(event){
+      //				console.log("mouseout")
+      //			})
+      //			//进入目标元素或者其子元素的时候执行
+      //			EventUtil.addHandler(div, "mouseover", function(event){
+      //				console.log("mouseover")
+      //			})
+      //			//只能进入目标元素时候才去触发
+      //			EventUtil.addHandler(div, "mouseenter", function(event){
+      //				console.log("mouseenter")
+      //			})
+      //			//只能离开目标元素时候才去触发
+      //			EventUtil.addHandler(div, "mouseleave", function(event){
+      //				console.log("mouseleave ")
+      //			})
+      //			var div = document.getElementById("myDiv");
+      //			EventUtil.addHandler(div, "click", function(event) {
+      //				var keys = new Array();
+      //				if(event.shiftKey) {
+      //					keys.push("shift");
+      //				}
+      //				if(event.ctrlKey) {
+      //					keys.push("ctrl");
+      //				}
+      //				if(event.altKey) {
+      //					keys.push("alt");
+      //				}
+      //				if(event.metaKey) {
+      //					keys.push("meta");
+      //				}
+      //				console.log("keys:" + keys.join(","));
+      //			});
+      EventUtil.addhandler(myBtn, 'mousedown', function (event) {
+        console.log('mousedown')
+        console.log(event.button) //区分浏览器
+        // event.button == 0 鼠标左键
+        //event.button == 1 鼠标中键
+        //event.button == 2 鼠标右键
+
+        //IE8派系
+        // event.button == 0 没有按下按钮
+        //event.button == 1 按下主鼠标按钮
+        //event.button == 2 按下次鼠标按钮
+        //event.button == 3 按下同时按下主、次鼠标按钮
+        //event.button == 4 按下中间鼠标按钮
+      })
+    </script>
+  </body>
+</html>

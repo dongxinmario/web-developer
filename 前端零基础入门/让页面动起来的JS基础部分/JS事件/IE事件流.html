@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IE事件流</title>
+  </head>
+  <body>
+    <!-- 
+    添加事件 attachEvent(event, function)
+    移除事件 detachEvent(event, function)
+    ie8及以下的浏览器
+   -->
+    <button id="myBtn"></button>
+    <script>
+      var btn = document.getElementById('myBtn')
+      function clickme() {
+        alert('Clicked')
+      }
+      btn.attachEvent('onclick', clickme)
+      /* btn.attachEvent('onclick', function () {
+        alert('Clicked2')
+      }) */
+      btn.detachEvent('onclick', clickme)
+      btn.attachEvent('onclick', function () {
+        alert(this === window) // true
+      })
+    </script>
+  </body>
+</html>

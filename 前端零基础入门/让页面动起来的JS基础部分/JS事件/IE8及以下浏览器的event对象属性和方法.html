@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IE8及以下浏览器的event对象属性和方法</title>
+  </head>
+  <body>
+    <button id="mybtn">点击我</button>
+    <a href="https://www.baidu.com/" id="a">baidu</a>
+    <div id="parent">
+      <div id="child">点击我</div>
+    </div>
+    <button id="target">target按钮</button>
+    <script>
+      // attachEvent
+      var mybtn = document.getElementById('mybtn')
+      mybtn.attachEvent('onclick', function (event) {
+        // event.type 事件类型
+        console.log(event.type)
+      })
+      // event.returnValue = false 阻止默认行为同 preventDefault
+      var a = document.getElementById('a')
+      a.attachEvent('onclick', function (event) {
+        event.returnValue = false
+        console.log('baidu')
+      })
+      // event.cancelBubble = true 取消事件冒泡同 stopPropagation
+      var parent = document.getElementById('parent')
+      parent.attachEvent('onclick', function (event) {
+        console.log('parent被触发了')
+      })
+      var child = document.getElementById('child')
+      child.attachEvent('onclick', function (event) {
+        event.cancelBubble = true
+        console.log('child被触发了')
+      })
+      // event.srcElement 同 target
+      var target = document.getElementById('target')
+      target.attachEvent('onclick', function (event) {
+        console.log(event.srcElement)
+      })
+    </script>
+  </body>
+</html>

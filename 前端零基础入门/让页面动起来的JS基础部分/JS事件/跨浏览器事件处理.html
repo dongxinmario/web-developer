@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>跨浏览器事件处理</title>
+  </head>
+  <body>
+    <button id="mybtn">点击我</button>
+    <script>
+      // 兼容所有浏览器
+      var EventUtil = {
+        addhandler: function (element, type, handler) {
+          // 绑定事件
+          // Chrome, FireFox, IE9等 addEventListener
+          // IE8及以下 attachEvent
+          if (element.addEventListener) {
+            element.addEventListener(type, handler, false)
+          } else if (element.attachEvent) {
+            element.attachEvent('on' + type, handler)
+          } else {
+            element['on' + type] = null
+          }
+        },
+        removehandle: function (element, type, handler) {
+          // 移除事件
+          // Chrome, FireFox, IE9等 removeEventListener
+          // IE8及以下 detachEvent detachEvent
+          if (element.removeEventListener) {
+            element.removeEventListener(type, handler, false)
+          } else if (element.detachEvent) {
+            element.detachEvent('on' + type, handler)
+          } else {
+            element['on' + type] = handler
+          }
+        },
+      }
+      var btn = document.getElementById('mybtn')
+      var handler = function () {
+        alert('Clicked')
+      }
+      EventUtil.addhandler(btn, 'click', handler)
+      EventUtil.removehandle(btn, 'click', handler)
+    </script>
+  </body>
+</html>
