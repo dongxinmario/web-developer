@@ -1,14 +1,18 @@
 :root {
   --hl: #1b2f90;
   --bg: #f9f9f6;
+  --t: 2s;
 }
 body {
-  background: #ffc400;
+  background: url(../images/bg.png) no-repeat;
+  background-size: 100%;
+  overflow: hidden;
 }
 .dog {
   width: 300px;
   height: 400px;
   position: relative;
+  top: 74vh;
 }
 .center {
   position: absolute;
@@ -49,9 +53,11 @@ body {
   transform: translate(-42px, 0) rotate(10deg);
   transform-origin: 50% 0;
   z-index: 0;
+  animation: rotate var(--t) ease-out infinite;
 }
 .ear.right {
   transform: scale(-1, 1) translate(-26px, 0) rotate(10deg);
+  animation: rotate-r var(--t) ease-out infinite;
 }
 .birthmark {
   width: 30px;
@@ -91,6 +97,7 @@ body {
   left: 3px;
   top: 1px;
   box-shadow: 0 0 8px 0 #000 inset;
+  animation: translate var(--t) ease-out infinite;
 }
 .pupil::before {
   content: '';
@@ -141,6 +148,7 @@ body {
   transform: translate(-21px, 0) rotate(30deg);
   border-radius: 50%;
   top: 19px;
+  animation: resize var(--t) ease-out infinite;
 }
 .nostril.right {
   transform: scale(-1, 1) translate(-7px, 0) rotate(30deg);
@@ -153,6 +161,7 @@ body {
   z-index: 1;
   box-shadow: 0 0 4px 0 #000 inset;
   top: 68px;
+  animation: open var(--t) ease-out infinite;
 }
 .mouth::before {
   content: '';
@@ -189,6 +198,7 @@ body {
   box-shadow: 0 0 2px 0 #111 inset;
   top: 0;
   z-index: 0;
+  animation: extend var(--t) ease-out infinite;
 }
 .body {
   background: var(--bg);
@@ -224,7 +234,7 @@ body {
 .leg {
   width: 29px;
   height: 50px;
-  background: var(--bg);
+  background: linear-gradient(-85deg, #ddd 0%, #ddd 5%, #fff 20%, #fff 100%);
   position: absolute;
   left: 50%;
   top: 40px;
@@ -237,9 +247,86 @@ body {
 .foot {
   width: 29px;
   height: 15px;
-  background: linear-gradient(90deg,#bbb 0%,#bbb 8%,#fff 16%,#fff 100%);
+  background: linear-gradient(-120deg, #ddd 0%, #ddd 10%, #fff 30%, #fff 100%);
   position: absolute;
   left: 2px;
   bottom: -8px;
   border-radius: 15px / 10px 10px 5px 5px;
+}
+.belly {
+  z-index: 1;
+  width: 50px;
+  height: 36px;
+  background: linear-gradient(0deg, #ddd 0%, #fff 20%, #fff 100%);
+  border-radius: 30px / 0 0 36px 36px;
+  top: 34px;
+}
+@keyframes rotate {
+  0% {
+    transform: translate(-42px, 0) rotate(10deg);
+  }
+  50% {
+    transform: translate(-42px, 0) rotate(30deg);
+  }
+  100% {
+    transform: translate(-42px, 0) rotate(10deg);
+  }
+}
+@keyframes rotate-r {
+  0% {
+    transform: scale(-1, 1) translate(-26px, 0) rotate(10deg);
+  }
+  50% {
+    transform: scale(-1, 1) translate(-26px, 0) rotate(30deg);
+  }
+  100% {
+    transform: scale(-1, 1) translate(-26px, 0) rotate(10deg);
+  }
+}
+@keyframes translate {
+  0% {
+    left: 3px;
+  }
+  50% {
+    left: 6px;
+  }
+  100% {
+    left: 3px;
+  }
+}
+@keyframes resize {
+  0% {
+    height: 4px;
+  }
+  50% {
+    height: 3px;
+  }
+  100% {
+    height: 3px;
+  }
+}
+@keyframes extend {
+  0% {
+    height: 14px;
+  }
+  50% {
+    height: 23px;
+  }
+  100% {
+    height: 14px;
+  }
+}
+@keyframes open {
+  0% {
+    height: 27px;
+    border-radius: 34px/0 0 27px 27px;
+  }
+  50% {
+    height: 20px;
+    border-radius: 34px/0 0 20px 20px;
+  }
+  100% {
+    height: 27px;
+    border-radius: 34px/0 0 27px 27px;
+  }
 }
