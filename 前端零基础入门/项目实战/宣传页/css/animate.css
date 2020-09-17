@@ -1,0 +1,194 @@
+/* 第一屏动画 */
+.screen-1 > .screen-1-title,
+.screen-1 > .screen-1-phone,
+.screen-1 > .screen-1-shadow {
+  transition: all 1s;
+}
+.screen-1 > .screen-1-title-animate-init {
+  transform: translate(0, -100%);
+  opacity: 0;
+}
+.screen-1 > .screen-1-title-animate-done,
+.screen-1 > .screen-1-phone-animate-done,
+.screen-1 > .screen-1-shadow-animate-done {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.screen-1 > .screen-1-phone-animate-init,
+.screen-1 > .screen-1-shadow-animate-init {
+  transform: translate(0, 100%);
+  opacity: 0;
+}
+/* 第二屏动画 */
+.screen-2 > .screen-2-title,
+.screen-2 > .screen-2-subtitle,
+.screen-2 > .screen-2-phone,
+.index-1,
+.index-2,
+.index-3 {
+  transition: all 1s;
+}
+.screen-2-phone > .screen-2-phone-desc {
+  transition: all 0.5s 1s;
+}
+.screen-2 > .screen-2-title-animate-init {
+  transform: translate(0, -100%);
+  opacity: 0;
+}
+.screen-2 > .screen-2-subtitle-animate-init,
+.screen-2 > .screen-2-phone-animate-init {
+  transform: translate(0, 100%);
+  opacity: 0;
+}
+.screen-2-phone > .screen-2-phone-desc-animate-init {
+  transform: translate(100%, 100%);
+  opacity: 0;
+}
+.index-1-animate-init {
+  transform: translate(-100%, 0);
+  opacity: 1;
+}
+.index-2-animate-init,
+.index-3-animate-init {
+  transform: translate(100%, 0);
+  opacity: 1;
+}
+.screen-2 > .screen-2-title-animate-done,
+.screen-2 > .screen-2-subtitle-animate-done,
+.screen-2 > .screen-2-phone-animate-done,
+.screen-2-phone > .screen-2-phone-desc-animate-done {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.screen-3-wrap > .screen-3-title,
+.screen-3-wrap > .screen-3-subtitle,
+.screen-3-wrap > .screen-3-phone,
+.screen-3-wrap > .screen-3-intro {
+  transition: all 1s;
+}
+.screen-3-wrap > .screen-3-title-animate-init {
+  transform: translate(0, -100%);
+  opacity: 0;
+}
+.screen-3-wrap > .screen-3-subtitle-animate-init,
+.screen-3-wrap > .screen-3-phone-animate-init {
+  transform: translate(0, 100%);
+  opacity: 0;
+}
+.screen-3-wrap > .screen-3-intro-animate-init {
+  transform: scale(0.5);
+  opacity: 0;
+}
+.screen-3-wrap > .screen-3-title-animate-done,
+.screen-3-wrap > .screen-3-subtitle-animate-done,
+.screen-3-wrap > .screen-3-phone-animate-done {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.screen-3-wrap > .screen-3-intro-animate-done {
+  transform: scale(1);
+  opacity: 1;
+}
+.screen-3-intro > .screen-3-intro-item {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.screen-3-intro > .screen-3-intro-item:hover {
+  transform: scale(1.1);
+  border-color: #fff;
+}
+/* 第四屏动画 */
+.screen-4-wrap > .screen-4-title,
+.screen-4-wrap > .screen-4-subtitle {
+  transition: all 1s;
+}
+.screen-4-wrap > .screen-4-title-animate-init {
+  transform: translate(0, -100%);
+  opacity: 0;
+}
+.screen-4-wrap > .screen-4-subtitle-animate-init {
+  transform: translate(0, 100%);
+  opacity: 0;
+}
+.screen-4-wrap > .screen-4-title-animate-done,
+.screen-4-wrap > .screen-4-subtitle-animate-done {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.picture-1 {
+  transition: all 1s 0.5s;
+}
+.picture-2 {
+  transition: all 1s 1s;
+}
+.picture-3 {
+  transition: all 1s 1.5s;
+}
+.picture-4 {
+  transition: all 1s 2s;
+}
+.picture-1-animate-init,
+.picture-2-animate-init,
+.picture-3-animate-init,
+.picture-4-animate-init {
+  opacity: 0;
+}
+.picture-1-animate-done,
+.picture-2-animate-done,
+.picture-3-animate-done,
+.picture-4-animate-done {
+  opacity: 1;
+}
+/* 第五屏动画 */
+.screen-5 > .screen-5-title,
+.screen-5 > .screen-5-subtitle,
+.screen-5 > .screen-5-bg {
+  transition: all 1s;
+}
+.screen-5 > .screen-5-title-animate-init {
+  transform: translate(0, -100%);
+  opacity: 0;
+}
+.screen-5 > .screen-5-subtitle-animate-init,
+.screen-5 > .screen-5-bg-animate-init {
+  transform: translate(0, 100%);
+  opacity: 0;
+}
+.screen-5 > .screen-5-title-animate-done,
+.screen-5 > .screen-5-subtitle-animate-done,
+.screen-5 > .screen-5-bg-animate-done {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+/* 定义帧动画 */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+/* 使用帧动画 */
+.screen-2-phone > .screen-2-phone-desc::before{
+  animation: bounce 2s infinite 1s;
+}
+.screen-2-phone > .screen-2-phone-desc::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 1px;
+  left: 0;
+  background-color: rgba(255, 0, 0, 0.4);
+  animation: bounce 2s infinite;
+  border-radius: 50%;
+}
+.screen-2-phone > .screen-2-phone-desc.index-1::before{
+  left: 200px;
+}
+.screen-2-phone > .screen-2-phone-desc.index-1::after{
+  left: 200px;
+}
