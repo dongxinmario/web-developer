@@ -1,3 +1,19 @@
+/* 导航条固定样式 */
+.header {
+  transition: all 1s;
+}
+.header-back {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 4;
+}
+.header-back .header-logo,
+.header-back .nav-item {
+  color: #fff;
+}
 /* 第一屏动画 */
 .screen-1 > .screen-1-title,
 .screen-1 > .screen-1-phone,
@@ -171,7 +187,7 @@
   }
 }
 /* 使用帧动画 */
-.screen-2-phone > .screen-2-phone-desc::before{
+.screen-2-phone > .screen-2-phone-desc::before {
   animation: bounce 2s infinite 1s;
 }
 .screen-2-phone > .screen-2-phone-desc::after {
@@ -186,9 +202,19 @@
   animation: bounce 2s infinite;
   border-radius: 50%;
 }
-.screen-2-phone > .screen-2-phone-desc.index-1::before{
+.screen-2-phone > .screen-2-phone-desc.index-1::before {
   left: 200px;
 }
-.screen-2-phone > .screen-2-phone-desc.index-1::after{
+.screen-2-phone > .screen-2-phone-desc.index-1::after {
   left: 200px;
+}
+/* 大纲 outline in 样式 */
+.outline{
+  transition: all 1s;
+  transform: translate(100%,0);
+  opacity: 0;
+}
+.outline-in{
+  transform: translate(0,0);
+  opacity: 1;
 }

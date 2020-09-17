@@ -8,7 +8,7 @@
   position: relative;
   margin: 0 auto;
 }
-.header > .header-wrap > .header-logo {
+.header-wrap > .header-logo {
   position: absolute;
   width: 132px;
   height: 40px;
@@ -35,6 +35,8 @@
   color: #07111b;
   display: block;
   height: 40px;
+  width: 30px;
+  text-align: center;
   line-height: 40px;
   float: left;
   margin-left: 48px;
@@ -62,6 +64,16 @@
   width: 90px;
   text-align: center;
   border-radius: 2px;
+}
+.header-nav > .nav-tip {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+  margin-left: 48px;
 }
 /* 第一屏 */
 .screen-1 {
@@ -362,4 +374,34 @@
   color: #fff;
   line-height: 80px;
   text-align: center;
+}
+.outline {
+  position: fixed;
+  padding: 5px 10px;
+  bottom: 120px;
+  right: 0;
+  z-index: 3;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.outline > .outline-item {
+  display: block;
+  width: 40px;
+  height: 30px;
+  line-height: 30px;
+  padding: 5px 0;
+  background-color: #fff;
+  margin-top: 5px;
+  border-top: 1px solid #eee;
+  text-align: center;
+  color: #93999f;
+}
+.outline > .outline-item:first-child {
+  border: none;
+}
+.outline > .outline-item.active {
+  color: #f00;
+}
+.outline > .outline-item:hover {
+  color: #f01414;
 }
