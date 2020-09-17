@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据类型和堆栈</title>
+  </head>
+  <body>
+    <script>
+      /* 
+    变量
+      基本类型：4 'str' true/false undefined null
+      引用类型：[] {}
+      区别：基本类型不可修改，引用类型可以修改
+    */
+      var str = 'string'
+      var anotherStr = str.replace('s', '')
+      console.log(str + ' / ' + anotherStr)
+      var person = {}
+      console.log(person)
+      person.name = 'david'
+      person.sex = 'male'
+      person.sex = 'female'
+      person.family = ['dad', 'mom']
+      delete person.sex
+      console.log(person)
+    </script>
+    <script>
+      var person = 'person'
+      person.name = 'bob'
+      console.log(person.name)
+    </script>
+    <script>
+      /* 
+      堆栈
+      栈内存是有限有序的，用于存基本类型变量 按值访问
+      堆内存是无序的，用于存引用类型变量 按引用(地址)访问
+      */
+    </script>
+    <script>
+      var xmScore = 4,
+        xhScore = 4
+      console.log(xmScore === xhScore) // true
+      var xm = {
+          age: 18,
+          score: 4,
+        },
+        xh = {
+          age: 18,
+          score: 4,
+        },
+        xd = xm
+      console.log(xm === xh) // false
+      console.log(xm === xd) // true
+      // 判断对象是否相等
+      function equalObj(a, b) {
+        for (var i in a) {
+          if (a[i] !== b[i]) return false
+        }
+        return true
+      }
+      // 判断数组是否相等
+      function equalArray(a, b) {
+        if (a.length !== b.length) return false
+        for (var i = 0; i < a.length; i++) {
+          if (a[i] !== b[i]) return false
+        }
+        return true
+      }
+      console.log(equalObj(xm, xh)) // true
+    </script>
+    <script>
+      var xmScore = 4,
+        xhScore = xmScore
+      xhScore++
+      console.log('xhScore: ' + xhScore)
+      console.log('xmScore: ' + xmScore)
+    </script>
+    <script>
+      var xm = {
+          age: 18,
+          score: 4,
+        },
+        xh = xm
+      xh.score++
+      console.log(xh)
+      console.log(xm)
+    </script>
+    <script>
+      // 引用类型复制
+      var xm = {
+        age: 18,
+        score: 4,
+      }
+      function copyObj(obj) {
+        var newObj = {}
+        for (var i in obj) {
+          newObj[i] = obj[i]
+        }
+        return newObj
+      }
+      xh = copyObj(xm)
+      console.log(xh === xm)
+    </script>
+  </body>
+</html>

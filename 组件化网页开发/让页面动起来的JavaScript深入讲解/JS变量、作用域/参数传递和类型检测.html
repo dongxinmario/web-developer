@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>参数传递和类型检测</title>
+  </head>
+  <body>
+    <script>
+      // 参数传递
+      function fn(a, b) {
+        return a + b
+      }
+      fn(1, 2)
+      function addTen(num) {
+        return num + 10
+      }
+      var score = 70
+      console.log(addTen(score))
+      function setName(obj) {
+        return (obj.name = 'xm')
+      }
+      var person = {}
+      setName(person)
+      console.log(person.name)
+    </script>
+    <script>
+      // 类型检测
+      console.log(typeof 4)
+      console.log(typeof a)
+      console.log(typeof 'str')
+      console.log(typeof true)
+      console.log(typeof undefined)
+      console.log(typeof null)
+      console.log(typeof [])
+      console.log(typeof {})
+      console.log(typeof function () {})
+      console.log(typeof /a/)
+      // instanceof 只适用于引用类型
+      console.log([] instanceof Array) // true
+      console.log([] instanceof Object) // true
+      console.log({} instanceof Array) // false
+    </script>
+    <script>
+      function add(a, b) {
+        return a + b
+      }
+      function fn(fn) {
+        fn.person = 'xm'
+        fn = function () {}
+        fn.person = 'xh'
+      }
+      fn(add)
+      console.log(add.person)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>全局作用域和局部作用域</title>
+  </head>
+  <body>
+    <script>
+      // 局部作用域：函数作用域
+      var name = 'xm'
+      function fn() {
+        var sex = 'male'
+        console.log(name)
+        console.log(sex)
+      }
+      fn()
+      console.log(name)
+      // console.log(sex)
+      // js 没有块级作用域：if(){} for(){}
+    </script>
+    <script>
+      // 变量对象和作用域链
+      // 变量对象
+      var name='xm'
+      function fn(){
+        var sex='male'
+        function fn2(){
+          var age=18
+        }
+      }
+    </script>
+  </body>
+</html>
