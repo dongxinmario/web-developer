@@ -84,6 +84,9 @@ var playScreenAnimateDone = function (screenCls) {
 }
 window.onload = function () {
   for (j in screenAnimateElements) {
+    if (j === 'screen-1') {
+      continue
+    }
     setScreenAnimateInit(j)
   }
 }
@@ -148,3 +151,28 @@ for (var i = 0; i < outlineItems.length; i++) {
   setNavJump(i, outlineItems)
 }
 // 滑动门特效
+var navTip = getElem('.nav-tip'),
+  setTip = function (idx, lib) {
+    lib[idx].onmouseover = function () {
+      console.log(this, idx)
+      navTip.style.left = (idx * 70) + 'px'
+    }
+    var activeIdx = 0
+    lib[idx].onmouseout = function () {
+      console.log(this, idx)
+      for (var i = 0; i < lib.length; i++) {
+        if (getCls(lib[i]).indexOf('active') > -1) {
+          activeIdx = i
+          break
+        }
+      }
+      navTip.style.left = (activeIdx * 70) + 'px'
+    }
+  }
+for (var i = 0; i < navItems.length; i++) {
+  setTip(i, navItems)
+}
+setTimeout(() => {
+  addCls(navItems[0], 'active')
+  playScreenAnimateDone('.screen-1')
+}, 200);
