@@ -5,5 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS解析机制-预解析</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      // JS 解析机制
+      var name = 'xm',
+        age = 18
+      function fn() {
+        console.log(name)
+        var name = 'xh',
+          age = 10
+        console.log(name)
+      }
+      fn()
+    </script>
+    <script>
+      // JS 预解析分标签进行
+      var a = 1
+    </script>
+    <script>
+      console.log(a) // 1
+    </script>
+  </body>
 </html>

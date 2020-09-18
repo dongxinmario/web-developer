@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>内存管理和垃圾收集机制</title>
+  </head>
+  <body>
+    <script>
+      /* 
+    Js 自动
+    原理：找出没用的数据，打上标记，释放其内存，周期性执行
+    标识无用数据的策略
+      标记清除
+        环境中的变量
+      引用计数
+    */
+      var xm = {
+        name: 'xm',
+        age: 18,
+      } // 1
+      var xh = xm // 2
+      xh = {} // 1
+      xm = {} // 0 数据被回收，无法被访问了
+    </script>
+    <script>
+      /* 
+      内存管理
+      Web浏览器 < 桌面应用程序
+      设置为 null 解除引用 释放内存
+      */
+      var arr = []
+      arr = null // 手动解除引用
+    </script>
+  </body>
+</html>

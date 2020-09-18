@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js中的对象</title>
+  </head>
+  <body>
+    <script>
+      var cat = {
+        name: 'Tom',
+        age: 4,
+        family: ['dad', 'mom'],
+        speak: function () {
+          console.log('喵喵喵~')
+        },
+        friend: {
+          name: 'Jerry',
+          age: 4,
+        },
+      }
+      // cat.name || cate['name']
+      cat.name = 'Garfield'
+      cat.type = '加菲猫'
+      console.log(cat)
+      console.log(cat['name'])
+      delete cat.type
+      console.log('name' in cat)
+      console.log('type' in cat)
+      // 遍历对象
+      for (var p in cat) {
+        console.log(p)
+        console.log(cat[p])
+      }
+    </script>
+  </body>
+</html>
