@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>面向对象概述</title>
+  </head>
+  <body>
+    <script>
+      // Object 是 javascript 的父对象
+      function F() {} // 自定义函数
+      console.log(F.prototype instanceof Object)
+    </script>
+    <script>
+      // 构造函数对象：函数构造器 创建函数对象
+      // var obj=new Function(var1,var2,...,functionBody())
+      // var1, var2 正常变量  functionBody() 自定义函数体
+      // 注意：构造器构造的对象，效率低 var1 var2 顺序在 functionBody 中不能改变
+      var obj = new Function('a', 'b', 'return a+b')
+      var s = obj(2, 5)
+      console.log(s)
+    </script>
+  </body>
+</html>

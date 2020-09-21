@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>声明对象</title>
+  </head>
+  <body>
+    <script>
+      // 字面式
+      var person = {
+        name: 'xm',
+        age: 26,
+        sex: 'male',
+        eat: function (foods) {
+          console.log('我在吃' + foods)
+        },
+        play: function (game) {
+          console.log('我在玩' + game)
+        },
+      }
+      console.log(person.age)
+      person.eat('猪耳朵')
+      person.play('幽灵行动荒野')
+    </script>
+    <script>
+      // Object
+      var box = new Object()
+      box.name = 'xm'
+      box.age = 100
+      box.infos = function (str) {
+        return this.name + '---' + this.age + '---' + str
+      }
+      console.log(box.name)
+      var con = box.infos('吃饭呐')
+      console.log(con)
+    </script>
+    <script>
+      // 构造方法声明对象
+      function person(name, sex, age) {
+        this.name = name
+        this.sex = sex
+        this.age = age
+        this.show = function () {
+          console.log(this.name + '---' + this.sex + '---' + this.age)
+        }
+      }
+      var obj1 = new person('xm', 'male', 18)
+      console.log(obj1)
+      obj1.show()
+    </script>
+    <script>
+      // 工厂方式声明对象
+      function createObject(name, age) {
+        var obj = new Object()
+        obj.name = name
+        obj.age = age
+        obj.run = function () {
+          // 在 obj 对象中，调用 obj 对象的属性 必须要用 this
+          return this.name + '---' + this.age + '运行中....'
+        }
+        obj.say = function () {
+          return '晚饭吃什么'
+        }
+        return obj
+      }
+      var box1 = createObject('xm', 18)
+      console.log(box1)
+      console.log(box1.run())
+      var box2 = createObject('xh', 29)
+      console.log(box2)
+      console.log(box2.say())
+    </script>
+  </body>
+</html>
