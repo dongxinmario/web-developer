@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>参数使用</title>
+  </head>
+  <body>
+    <script>
+      // 类型
+      function add(num1, num2) {
+        return num1 + num2
+      }
+      add(1, 2)
+      // 形参 = 实参 num1 = 1, num2 = 2
+    </script>
+    <script>
+      // 实参个数和形参个数相等
+      // 实参个数小于形参
+      function pow(base, power) {
+        power = power || 2
+        return Math.pow(base, power)
+      }
+      console.log(pow(3)) // 9
+      console.log(pow(3, 3)) // 27
+    </script>
+    <script>
+      // 实参个数大于形参
+      function add() {
+        if (arguments.length == 0) return
+        var sum = 0
+        for (var i = 0; i < arguments.length; i++) {
+          sum += arguments[i]
+        }
+        return sum
+      }
+      console.log(add()) // undefined
+      console.log(add(1, 2, 3, 4, 5)) // 15
+    </script>
+    <script>
+      // arguments 类数组 arguments.callee
+      function add(num1, num2) {
+        console.log(arguments.callee)
+        return num1 + num2
+      }
+      add()
+      function factorial(num) {
+        if (num <= 1) return 1
+        return num * arguments.callee(num - 1)
+      }
+      console.log(factorial(5))
+    </script>
+  </body>
+</html>
