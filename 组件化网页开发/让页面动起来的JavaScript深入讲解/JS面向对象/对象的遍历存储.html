@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象的遍历存储</title>
+  </head>
+  <body>
+    <script>
+      // 遍历对象的属性 对象可以当作数组处理
+      var ren = {}
+      ren.name = 'xm'
+      ren.age = '18'
+      ren.height = '180'
+      ren.demo = function () {
+        console.log(this.name)
+      }
+      // console.log(ren.age)
+      for (var i in ren) {
+        // i 是属性方法名
+        console.log(i)
+        console.log(ren[i]) // 取得属性值
+      }
+    </script>
+    <script>
+      function ren() {
+        this.name = 'xm'
+        this.age = '18'
+        this.height = '180'
+        this.demo = function () {
+          console.log(this.name)
+        }
+      }
+      var r=new ren()
+      for (var i in r) {
+        console.log(r[i])
+      }
+    </script>
+    <script>
+      // 对象在内存中的分布
+    </script>
+  </body>
+</html>

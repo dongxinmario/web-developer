@@ -71,5 +71,54 @@
       console.log(box2)
       console.log(box2.say())
     </script>
+    <script>
+      // js 中原型模式声明对象
+      function test() {}
+      console.log(test.prototype instanceof Object) // 自带该对象
+      /* test.prototype.color = 'red'
+      test.prototype.height = '1.7'
+      test.prototype.width = '1.2'
+      test.prototype.showInfo = function () {
+        console.log(this.color + '---' + this.height + '---' + this.width)
+      }
+      test.prototype.getInfo = function () {
+        console.log('aaaa')
+      } */
+      // json 数据定义属性和方法
+      test.prototype = {
+        color: 'red',
+        height: '1.7',
+        width: '1.2',
+        showInfo: function () {
+          console.log(this.color + '---' + this.height + '---' + this.width)
+        },
+        getInfo: function () {
+          console.log('aaaaa')
+        },
+      }
+      var car1 = new test()
+      console.log(car1)
+      car1.showInfo()
+    </script>
+    <script>
+      // js 中混合模式声明对象 构造模式 + 原型模式
+      function blog(name, url, friend) {
+        this.name = name
+        this.url = url
+        this.friend = friend
+      }
+      blog.prototype = {
+        text: 'awt',
+        showInfo: function () {
+          console.log(this.name + '---' + this.url + '---' + this.friend)
+        },
+        gets: function () {
+          console.log('aad')
+        },
+      }
+      var peo = new blog('xm', 'https://class.imooc.com/lesson/791#mid=19893', 'xh')
+      console.log(peo)
+      peo.showInfo()
+    </script>
   </body>
 </html>
