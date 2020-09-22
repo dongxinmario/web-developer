@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象冒充</title>
+  </head>
+  <body>
+    <script>
+      // 对象冒充 将父类的属性方法一起传给子类作为特权属性方法
+      function person(name, age) {
+        this.name = name
+        this.age = age
+        this.sayHi = function () {
+          console.log('hi')
+        }
+      }
+      person.prototype.walk = function () {
+        console.log('walk...')
+      }
+      function student(name, age, grade) {
+        this.newMethod = person // 冒充 person 对象
+        this.newMethod(name, age)
+        this.grade = grade
+      }
+      var s1 = new student('xm', 15, 5)
+      console.log(s1)
+      s1.sayHi()
+      // s1.walk()
+      // s1 继承 person 中的特权方法和属性，没有继承共有方法和属性
+    </script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>继承</title>
+  </head>
+  <body>
+    <script>
+      /* 
+    js 继承
+    原型：用 prototype 对象添加属性和方法
+    */
+      var person = function () {}
+      var p = new person()
+      /* 
+   三个阶段
+    1。var p = {} 创建对象
+    2. p.__proto__ = person.prototype __proto__ 自带的一个属性
+    3. 创建对象（初始化对象） p --> person.call(p)
+   */
+      console.log(person.prototype instanceof Object) // true
+      console.log(p.__proto__ instanceof Object) // true
+      console.log(p.__proto__ === person.prototype) // true
+    </script>
+    <script>
+      var person = function () {}
+      person.prototype.say = function () {
+        console.log('结果')
+      }
+      person.prototype.gongzi = 500
+      var programmer = function () {}
+      programmer.prototype = new person()
+      programmer.prototype.wcd = function () {
+        console.log('手动方法')
+      }
+      programmer.prototype.gongzi = 1000
+      var p = new programmer()
+      p.say()
+      p.wcd()
+      console.log(p.gongzi)
+    </script>
+    <script>
+      // js 继承
+      // 原型继承：用到原型链
+      function person(name, age) {
+        this.name = name
+        this.age = age
+      }
+      person.prototype.sayHello = function () {
+        console.log('属性 name 的值' + this.name)
+      }
+      var per = new person('xm', 20)
+      per.sayHello()
+      function student() {}
+      student.prototype = new person('xh', 18)
+      student.prototype.grade = 3
+      student.prototype.test = function () {
+        console.log(this.grade)
+      }
+      var s = new student()
+      s.sayHello()
+      console.log(s.grade)
+    </script>
+    <script>
+      /* 
+      构造函数继承
+      在子类内部构造父类的对象实现继承
+      */
+      function parents(name) {
+        this.name = name
+        this.say = function () {
+          console.log('父亲的名字：' + this.name)
+        }
+      }
+      function child(name, age) {
+        //  继承 parents
+        this.pObj = parents // 子对象的参数 name 传递到父对象中
+        this.pObj(name)
+        this.age = age
+        this.sayC = function () {
+          console.log('child: ' + this.name + '---age: ' + this.age)
+        }
+      }
+      var p = new parents('xm')
+      p.say()
+      var c = new child('xh', 20)
+      c.sayC()
+    </script>
+    <script>
+      /* 
+      call apply
+      call --> obj.call(方法,var1,var2,...)
+      apply --> obj.apply(方法,[var1,var2,...])
+      */
+      function person(name, age, len) {
+        this.name = name
+        this.age = age
+        this.len = len
+        this.say = function () {
+          console.log(this.name + ': ' + this.age + ': ' + this.len)
+        }
+      }
+      //  call 继承
+      function student(name, age) {
+        person.call(this, name, age)
+      }
+      // apply 继承
+      function teacher(name, age, len) {
+        person.apply(this, [name, age, len])
+      }
+      var per = new person('xm', 22, 176)
+      per.say()
+      var stu = new student('xh', 18)
+      stu.say()
+      var tea = new teacher('xj', 14, 144)
+      tea.say()
+    </script>
+  </body>
+</html>

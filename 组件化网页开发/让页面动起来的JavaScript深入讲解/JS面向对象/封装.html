@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>封装</title>
+  </head>
+  <body>
+    <script>
+      // 封装
+      /* function demo() {
+        var n = 1
+        function test(){
+          // 外部调用的出口
+          n++
+
+        }
+        test()
+        return n
+      }
+      demo()
+      console.log(n)
+      console.log(demo()) */
+      function demo() {
+        var n = 1
+        function test() {
+          return ++n
+        }
+        /* 
+        this.test = function() {
+          return ++n
+        }
+        */
+        return test
+      }
+      console.log(demo())
+      console.log(demo()())
+    </script>
+    <script>
+      function A() {
+        function _xx() {
+          console.log(11)
+        }
+        this.xx = function () {
+          return _xx
+        }
+      }
+      A.prototype = {
+        oth: function () {
+          console.log('普通方法')
+        },
+      }
+      var a = new A()
+      console.log(a.xx())
+      a.xx()()
+    </script>
+  </body>
+</html>
