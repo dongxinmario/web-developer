@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>初识正则表达式</title>
+  </head>
+  <body>
+    <!-- 创建正则表达式的两种方式 -->
+    <script>
+      // 字面量或直接量 /js/
+      // 正则表达式匹配的一定是字符串
+      // g=构造函数 new RegExp()
+      // var str = 'I love js'
+      // var pattern = /js/
+      // /js_正则 ,;!@4/
+      // . 在正则表达式中是特殊字符
+      var str = 'I love js'
+      var str1 = 'I Love Js'
+      var pattern = /js/
+      // 方法 test exec
+      console.log(pattern.test(str)) // true
+      console.log(pattern.exec(str))
+      console.log(pattern.test(str1)) // false
+      console.log(pattern.exec(str1)) // null
+    </script>
+  </body>
+</html>
