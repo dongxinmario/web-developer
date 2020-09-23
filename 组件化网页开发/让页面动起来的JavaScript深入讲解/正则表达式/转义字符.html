@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>转义字符</title>
+  </head>
+  <body>
+    <script>
+      // \
+      var str = '// 我是注释',
+        str1 = '\\\\',
+        str2 = '1.html\n2.css\n3.js',
+        str3 = '	js',
+        str4 = 'a\nb',
+        str5 = 'Henrry帅'
+      var pattern = /\/\//, // 匹配 /
+        pattern1 = /\\\\/, // 匹配 \
+        pattern2 = /\n/, // 匹配换行符
+        pattern3 = /\t/, // 匹配水平制表符 tab
+        pattern4 = /\x0A/, // 匹配换行符
+        pattern5 = /\x61\x0A\x62/,
+        pattern6 = /\u0009/ // 匹配水平制表符
+      console.log(pattern.exec(str))
+      console.log(pattern1.exec(str1))
+      console.log(pattern2.exec(str2))
+      console.log(pattern3.exec(str3))
+      console.log(pattern4.exec(str2))
+      console.log(pattern5.exec(str4))
+      console.log(pattern5.exec(str3))
+    </script>
+    <script>
+      // 字符类
+      var str1 = 'javascript',
+        str2 = 'Gidk发',
+        str3 = 00544,
+        str4 = 'JavaScript2.0',
+        str5 = 3.1415926,
+        str6 = ' '
+      var pattern1 = /[js]/, // 顺序匹配，j 与 j 匹配后便结束匹配
+        pattern2 = /[^js]/, // 匹配除 j 和 s 以外的第一个字符
+        pattern3 = /[a-zA-Z]/, // 匹配小写大写英文字符 a-z
+        pattern4 = /[c-d]/,
+        pattern5 = /[\u4e00-\u9fa5]/, // 匹配中文字符
+        pattern6 = /[0-9]/, // 匹配 0-9 数字 与 /\d/ 等价
+        pattern7 = /[a-zA-Z0-9@_]/,
+        pattern8 = /./, // 与 /^\n/ 等价
+        pattern9 = /\w/, // 匹配一个单字字符（字母、数字或者下划线） 与 /[a-zA-Z0-9_]/ 等价
+        pattern10 = /\W/, // 与 /[^a-zA-Z0-9_]/ 等价
+        pattern11 = /\s/ // 匹配空格或制表符
+      console.log(pattern2.exec(str1))
+      console.log(pattern3.exec(str1))
+      console.log(pattern4.exec(str1))
+      console.log(pattern5.exec(str2))
+      console.log(pattern6.exec(str4))
+      console.log(pattern8.exec(str5))
+      console.log(pattern11.exec(str6))
+    </script>
+  </body>
+</html>

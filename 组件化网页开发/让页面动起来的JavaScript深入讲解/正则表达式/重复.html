@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>重复</title>
+  </head>
+  <body>
+    <script>
+      var str1 = '110',
+        str2 = '肯德基豪华午餐：￥15.5！'
+      // var pattern1 = /\d{1,}/
+      // var pattern1 = /\d?/ // {0,1}
+      // var pattern1=/\d+/ // {1,}
+      var pattern1 = /\d*/, // {0,}
+        pattern2 = /\d+\.?\d*/
+      console.log(pattern1.exec(str1))
+      console.log(pattern2.exec(str2))
+    </script>
+    <script>
+      // 贪婪匹配
+      var str1 = 'aaab',
+        str2 = '<td><p>a</p></td><td><p>b</p></td>'
+      // var pattern1 = /a+/
+      var pattern1 = /a+?/, // 转换为非贪婪匹配
+        // pattern2 = /<td>.*<\/td>/
+        pattern2 = /<td>.*?<\/td>/
+      console.log(pattern1.exec(str1)) // a
+      console.log(pattern2.exec(str2))
+    </script>
+  </body>
+</html>

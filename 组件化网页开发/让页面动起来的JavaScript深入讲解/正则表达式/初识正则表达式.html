@@ -18,11 +18,26 @@
       var str = 'I love js'
       var str1 = 'I Love Js'
       var pattern = /js/
-      // 方法 test exec
+      var pattern1 = /js/i
+      var pattern2 = new RegExp('js')
+      var pattern3 = new RegExp('js', 'i')
+      // 方法 test exec 正则修饰符 i ignoreCase(不区分大小写)  g global(全局) m multiline(多行匹配) /js/igm or /js/gim
       console.log(pattern.test(str)) // true
       console.log(pattern.exec(str))
       console.log(pattern.test(str1)) // false
       console.log(pattern.exec(str1)) // null
+      console.log(pattern1.test(str1)) // true
+      console.log(pattern1.exec(str1))
+      console.log(pattern2.test(str)) // true
+      console.log(pattern2.exec(str))
+      console.log(pattern3.test(str1)) // true
+      console.log(pattern3.exec(str1))
+    </script>
+    <script>
+      var str = 'I love Js'
+      var userInpt = 'love'
+      var pattern = new RegExp(userInpt, 'i')
+      console.log(pattern.exec(str))
     </script>
   </body>
 </html>
