@@ -23,10 +23,16 @@
         width: 638px;
         resize: none;
       }
+      #regexp .readonly {
+        background-color: #eee;
+      }
       #regexp .textfield {
         width: 215px;
         padding: 5px;
         border: 1px solid #ccc;
+      }
+      #regexp #matchingBtn {
+        cursor: pointer;
       }
     </style>
   </head>
@@ -42,7 +48,13 @@
         <input type="button" value="测试匹配" id="matchingBtn" />
       </p>
       <p>匹配结果:</p>
-      <textarea id="matchingResult" class="textbox" disabled></textarea>
+      <div id="matchingResult" class="textbox readonly" disabled></div>
+      <p>
+        替换文本: <input type="text" id="userReplaceText" class="textfield" placeholder="在此输入替换文本" />
+        <input type="button" value="替换" id="replaceBtn" />
+      </p>
+      <p>替换结果:</p>
+      <div id="replaceResult" class="textbox readonly" disabled></div>
     </div>
     <script>
       var userText = document.getElementById('userText'),
@@ -50,29 +62,53 @@
         userModifier = document.getElementsByName('userModifier'),
         matchingBtn = document.getElementById('matchingBtn'),
         matchingResult = document.getElementById('matchingResult'),
-        pattern,modifier=''
-        for(var i=0;i<userModifier.length;i++){
-          userModifier[i].onclick=function(){
-            modifier=''
-            for(var j=0;j<userModifier.length;j++){
-              if(userModifier[j].checked)
-              modifier+=userModifier[j].value
-            }
+        userReplaceText = document.getElementById('userReplaceText'),
+        replaceBtn = document.getElementById('replaceBtn'),
+        replaceResult = document.getElementById('replaceResult'),
+        pattern,
+        modifier = ''
+      for (var i = 0; i < userModifier.length; i++) {
+        userModifier[i].onclick = function () {
+          modifier = ''
+          for (var j = 0; j < userModifier.length; j++) {
+            if (userModifier[j].checked) modifier += userModifier[j].value
           }
         }
+      }
       matchingBtn.onclick = function () {
-        if(!userText.value){
+        if (!userText.value) {
           alert('请输入待匹配的文本')
           userText.focus()
           return
         }
-        if(!userRegExp.value){
+        if (!userRegExp.value) {
           alert('请输入正则表达式')
           userRegExp.focus()
           return
         }
-        pattern = new RegExp(userRegExp.value,modifier)
-        matchingResult.value = pattern.exec(userText.value) || '没有匹配'
+        pattern = new RegExp('(' + userRegExp.value + ')', modifier)
+        matchingResult.innerHTML = pattern.exec(userText.value)
+          ? userText.value.replace(pattern, '<span style="background-color:yellow">$1</span>')
+          : '(没有匹配)'
+      }
+      replaceBtn.onclick = function () {
+        if (!userText.value) {
+          alert('请输入待匹配的文本')
+          userText.focus()
+          return
+        }
+        if (!userRegExp.value) {
+          alert('请输入正则表达式')
+          userRegExp.focus()
+          return
+        }
+        if (!userReplaceText.value) {
+          alert('请输入要替换成的文本')
+          userReplaceText.focus()
+          return
+        }
+        pattern = new RegExp('(' + userRegExp.value + ')', modifier)
+        replaceResult.innerHTML = userText.value.replace(pattern, '<span style="color:red">'+userReplaceText.value+'</span>')
       }
     </script>
   </body>

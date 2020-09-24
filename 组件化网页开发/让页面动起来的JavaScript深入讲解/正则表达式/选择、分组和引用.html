@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>选择、分组和引用</title>
+  </head>
+  <body>
+    <script>
+      // 选择
+      var str1 = 'js',
+        str2 = 'ab'
+      var pattern1 = /html|css|js/, // 匹配 html 或 css 或 js 单个匹配
+        pattern2 = /a|ab/
+      console.log(pattern1.exec(str1)) // js
+      console.log(pattern2.exec(str2)) // a
+    </script>
+    <script>
+      // 分组
+      var str1 = 'abab',
+        str2 = 'abcd',
+        str3 = 'ab cd ab',
+        str4 = '<p><a>这是一段文字</a></p>'
+      var pattern1 = /(ab)+/,
+        pattern2 = /(ab)c/,
+        pattern3 = /(?:ab)c/, // 非捕获类分组
+        pattern4 = /(ab)(c)/,
+        pattern5 = /(a(b(c)))/,
+        pattern6 = /(ab) cd \1/,
+        pattern7 = /<([a-zA-Z]+)>(.*?)<\/\1>/
+      console.log(pattern1.exec(str1))
+      console.log(pattern2.exec(str2))
+      console.log(pattern3.exec(str2))
+      console.log(pattern4.exec(str2))
+      console.log(pattern5.exec(str2))
+      console.log(pattern6.exec(str3))
+      console.log(pattern7.exec(str4))
+    </script>
+  </body>
+</html>

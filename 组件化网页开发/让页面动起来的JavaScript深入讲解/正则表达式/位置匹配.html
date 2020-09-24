@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>位置匹配</title>
+  </head>
+  <body>
+    <p class="odd2 odd">1</p>
+    <p class="even">2</p>
+    <p class="odd">3</p>
+    <p class="even">4</p>
+    <script>
+      // 首字匹配
+      var str1 = 'js',
+        str2 = 'html js'
+      var pattern1 = /^js/
+      console.log(pattern1.exec(str1)) // js
+      console.log(pattern1.exec(str2)) // null
+    </script>
+    <script>
+      // 尾匹配
+      var str1 = 'js',
+        str2 = 'js css'
+      var pattern1 = /js$/
+      console.log(pattern1.exec(str1)) // js
+      console.log(pattern1.exec(str2)) // null
+    </script>
+    <script>
+      var str1 = '110119120'
+      var pattern1 = /^\d+$/,
+        pattern2 = /\D/
+      console.log(pattern1.exec(str1))
+      if (pattern1.exec(str1)) {
+        console.log('全是数字')
+      } else {
+        console.log(pattern2.exec(str1))
+        console.log('不全是数字')
+      }
+      if (pattern2.exec(str1)) {
+        console.log('不全是数字')
+      } else {
+        console.log('全是数字')
+      }
+    </script>
+    <script>
+      // 单词边界匹配
+      var str1 = '@@@@js@@@@ html'
+      var pattern1 = /\bjs\b/
+      console.log(pattern1.exec(str1))
+    </script>
+    <script>
+      var oddP = getClassName('odd'),
+        evenP = getClassName('even')
+      for (var i = 0; i < oddP.length; i++) {
+        oddP[i].style.backgroundColor = 'red'
+      }
+      for (var i = 0; i < evenP.length; i++) {
+        evenP[i].style.backgroundColor = 'yellow'
+      }
+      function getClassName(className, parentNode) {
+        if (document.getElementsByClassName) {
+          return document.getElementsByClassName(className)
+        } else {
+          parentNode = parentNode || document
+          var nodeList = []
+          var allNodes = parentNode.getElementsByTagName('*')
+          var pattern = new RegExp('\\b' + className + '\\b')
+          for (var i = 0; i < allNodes.length; i++) {
+            if (pattern.test(allNodes[i].className)) {
+              nodeList.push(allNodes[i])
+            }
+          }
+          return nodeList
+        }
+      }
+    </script>
+    <script>
+      // 前瞻性匹配 负前瞻性匹配
+      var str1 = 'java',
+        str2 = 'javascript'
+      var pattern1 = /java(?=script)/, // 前瞻性匹配
+        pattern2 = /java(?!script)/ // 负前瞻性匹配
+      console.log(pattern1.exec(str1))
+      console.log(pattern1.exec(str2))
+      console.log(pattern2.exec(str1))
+      console.log(pattern2.exec(str2))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegExp对象的实例方法</title>
+  </head>
+  <body>
+    <script>
+      console.log(new RegExp('\\b')) // 转义字符需要双重转义
+      console.log(new RegExp('\\\\')) // 转义 '\'
+    </script>
+    <script>
+      // RegExp实例方法
+      var str1 = 'js js js'
+      var pattern1 = /js/g,
+        pattern2 = /(j)s/g
+      console.log(pattern1.exec(str1)) // js index 0
+      console.log(pattern1.exec(str1)) // js index 3
+      console.log(pattern1.exec(str1)) // js index 6
+      console.log(pattern1.exec(str1)) // null
+      console.log(pattern1.exec(str1)) // js index 0
+      console.log(pattern2.exec(str1))
+      console.log(pattern2.exec(str1))
+      console.log(pattern2.exec(str1))
+      console.log(pattern2.exec(str1))
+    </script>
+    <script>
+      var str1 = '1.js 2.js 3.js'
+      var pattern1 = /js/g
+      var total = 0,
+        match = '',
+        result
+      while ((result = pattern1.exec(str1)) != null) {
+        total++
+        match += '第' + total + '匹配到的是：' + result[0] + '，它的位置是：' + result.index + '\n'
+      }
+      console.log(total)
+      console.log(match)
+    </script>
+    <script>
+      var pattern = new RegExp('a\\nb')
+      console.log(pattern.toString())
+      console.log(pattern.toLocaleString())
+      console.log(pattern.valueOf() === pattern) // true
+    </script>
+    <script>
+      // RegExp实例属性
+      var str1 = 'js js js'
+      var pattern1 = /js/gi
+      console.log(pattern1.ignoreCase) // true
+      console.log(pattern1.global) // true
+      console.log(pattern1.multiline) // false
+      console.log(pattern1.source) // js
+      console.log(pattern1.lastIndex) // 0
+      pattern1.test(str1)
+      console.log(pattern1.lastIndex)
+      pattern1.test(str1)
+      console.log(pattern1.lastIndex)
+      pattern1.test(str1)
+      console.log(pattern1.lastIndex)
+      pattern1.test(str1)
+      console.log(pattern1.lastIndex)
+    </script>
+    <script>
+      // RegExp 构造函数属性
+      var str = 'js js js'
+      var pattern = /(j)s/
+      pattern.exec(str)
+      console.log(RegExp.input)
+      console.log(RegExp.$_)
+      console.log(RegExp.lastMatch)
+      console.log(RegExp['$&'])
+      console.log(RegExp.leftContext) // 空字符串
+      console.log(RegExp['$`'])
+      console.log(RegExp.rightContext) // ' js js'
+      console.log(RegExp["$'"])
+      console.log(RegExp.lastParen) // j
+      console.log(RegExp['$+'])
+      console.log(RegExp.$1) // j
+    </script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>常用正则表达式</title>
+  </head>
+  <body>
+    <script>
+      /* QQ 全是数字 首位不能为 0 最少 5 位(10000) 最多 11 位？
+      /^[1-9]\d{4,}$/ */
+
+      /* 昵称 2-18 位 中、英文、数字及下划线
+      /^[\u4e00-\u9fa5\w]{2,18}$/ */
+
+      /* 密码 6-16位 不能用空格白字符\s 区分大小写
+      /^\S{6-16}$/ */
+
+      // 去除字符串首尾的空白字符
+      var str = '   str     '
+      var pattern = /^\s+|\s+$/g,
+        pattern1 = /^\s+/,
+        pattern2 = /\s+$/
+      console.log(str)
+      console.log(str.replace(pattern, ''))
+      console.log(str.replace(pattern1, '').replace(pattern2, '')) // 速度更快
+      // 通用函数方法
+      function trim(str) {
+        return str.replace(/^\s+/, '').replace(/\s+$/, '')
+      }
+      console.log(trim(str))
+    </script>
+    <script>
+      /* 
+      转驼峰
+        css background-color:red
+        js elem.style.backgroundColor='red'
+        jquery:$(elem).css('background-color','red')
+      */
+      var str = 'background-color'
+      var pattern = /-([a-z])/gi
+      console.log(
+        str.replace(pattern, function (all, letter) {
+          return letter.toUpperCase()
+        })
+      )
+      function toCamelCase(str) {
+        return str.replace(pattern, function (all, letter) {
+          return letter.toUpperCase()
+        })
+      }
+    </script>
+    <script>
+      /* 
+      匹配 HTML标签
+      */
+      var str = '<p class="odd" id="odd">123</p>',
+        str1 = '<input type="text" value=">" name="username" />'
+      var pattern = /<\/?[a-zA-Z]+(\s+[a-zA-Z]+=".*")*>/g,
+        pattern1 = /<[^>]+>/g,
+        // pattern2 = /<(?:[^"'>]|"[^"]*"|'[^']*')*>/g
+        pattern2 = /<(?:[^"'>]|(["'])[^"']*\1)*>/g
+      console.log(str.match(pattern))
+      console.log(str.match(pattern1))
+      console.log(str1.match(pattern2))
+    </script>
+    <script>
+      /* 
+      邮箱
+      /(?:\w+\.)*\w+@(?:\w+\.)+[a-z]/i
+      /^[a-z0-9]+(?:[,_-][a-z0-9]+)*@[a-z0-9]+(?:[._-][a-z0-9]+)*\.[a-z]{2-4}$/i
+      */
+    </script>
+    <script>
+      /*
+       url
+       (协议:\/\/)主机名(:端口号)\/(路径)
+       /^(https?:\/\/)?([^:\/]+)(:\d+)?(\/.*)?$/
+       匹配主机名
+       /[a-z0-9]|[-a-z0-9]*[a-z0-9]/i
+       /^([a-z0-9]\.|[a-z0-9][-a-z0-9]*[a-z0-9]\.)*([a-z]+)$/i
+       */
+      var regexp = {
+        chinese: /[\u4e00-\u9fa5]/, // 中文字符
+        qq: /^[1-9]\d{4,$/, // QQ
+        nickname: /^[\u4e00-\u9fa5\w]{2,18}$/, // 昵称
+        password: /^\S{6-16}$/, // 密码
+        email: /^[a-z0-9]+(?:[,_-][a-z0-9]+)*@[a-z0-9]+(?:[._-][a-z0-9]+)*\.[a-z]{2-4}$/i,
+      }
+    </script>
+  </body>
+</html>

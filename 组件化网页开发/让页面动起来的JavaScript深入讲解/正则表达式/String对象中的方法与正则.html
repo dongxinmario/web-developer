@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String对象中的方法与正则</title>
+  </head>
+  <body>
+    <script>
+      // search 方法
+      var str1 = 'html js'
+      var pattern1 = /js/,
+        pattern2 = /js2/
+      console.log(str1.search(pattern1)) // 5
+      console.log(str1.search(pattern2)) // -1
+    </script>
+    <script>
+      // match
+      var str = 'js js js'
+      var pattern = /(j)s/g
+      console.log(str.match(pattern))
+      /* 
+      match VS exec
+      match: 非全局的情况下，才会返回分组中匹配到的内容，否则只匹配到所有匹配到的字符
+      exec: 无论是否全局匹配都会返回分组中匹配到的内容，都只会返回当前匹配到的一个内容，而不是全部返回
+      */
+    </script>
+    <script>
+      // 多行匹配
+      var str = '1.js\n2.js\n3.js'
+      var pattern = /js$/gm
+      console.log(str.match(pattern))
+    </script>
+    <script>
+      // split
+      var str = 'html,  css,     js'
+      var pattern = /\s*,\s*/
+      console.log(str.split(pattern))
+    </script>
+    <script>
+      // replace
+      var str = 'I love js js',
+        str1 = '1111-11-11',
+        str2 = 'I love js'
+      var pattern = /js/g,
+        pattern1 = /-/g,
+        pattern2 = /(js)/
+      console.log(str.replace(pattern, 'html'))
+      console.log(str1.replace(pattern1, '.'))
+      document.write(str2.replace(pattern2, '<strong style="color:red;">$1</strong>'))
+    </script>
+    <script>
+      // 敏感词过滤
+      var str = '中国军队和阿扁一起办证'
+      var pattern = /国军|阿扁|办证/g
+      console.log(
+        str.replace(pattern, function ($0) {
+          // console.log($0)
+          var result=''
+          for(var i=0;i<$0.length;i++){
+            result+='*'
+          }
+          return result
+        })
+      )
+    </script>
+  </body>
+</html>
