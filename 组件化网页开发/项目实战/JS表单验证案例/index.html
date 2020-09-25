@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>JS表单验证</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="title">账户注册</div>
+      <div class="item">
+        <label for="username">用户名: </label>
+        <span class="required">*</span>
+        <input type="text" id="userName" placeholder="请输入用户名" />
+      </div>
+      <div class="item_"></div>
+      <div class="item">
+        <label for="userPassword">密码: </label>
+        <span class="required">*</span>
+        <input type="password" id="userPassword" placeholder="请输入密码" />
+      </div>
+      <div class="item_"></div>
+      <div class="item">
+        <label for="userPassword_">确认密码: </label>
+        <span class="required">*</span>
+        <input type="password" id="userPassword_" placeholder="请确认密码" />
+      </div>
+      <div class="item_"></div>
+      <div class="item">
+        <label for="userFullName">姓名: </label>
+        <span class="required">*</span>
+        <input type="text" id="userFullName" placeholder="请输入中文姓名，且最多五位" />
+      </div>
+      <div class="item_"></div>
+      <div class="item">
+        <label for="userId">身份证号: </label>
+        <span class="required">*</span>
+        <input type="text" id="userId" placeholder="请输入身份证号" />
+      </div>
+      <div class="item_"></div>
+      <div class="item">
+        <label for="userEmail">邮箱: </label>
+        <span class="required">*</span>
+        <input type="text" id="userEmail" />
+      </div>
+      <div class="item_"></div>
+      <div class="item">
+        <label for="userPhone">手机号: </label>
+        <span class="required">*</span>
+        <input type="text" id="userPhone" placeholder="请输入手机号" />
+      </div>
+      <div class="item_"></div>
+      <div class="footer">
+        <input type="checkbox" id="choose" />
+        <label for="choose">我已阅读并同意用户使用协议</label>
+        <button id="submit">确认提交</button>
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
