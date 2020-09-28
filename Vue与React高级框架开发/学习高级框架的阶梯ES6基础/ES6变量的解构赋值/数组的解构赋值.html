@@ -30,15 +30,28 @@
       const [a, b = 23, c = 2, d = 'aaa'] = arr */
 
       // 交换变量
-      let a = 10
+      /* let a = 10
       let b = 20
       // let temp
       // temp = a
       // a = b
       // b = temp
-      [a, b] = [b, a]
+      [a, b] = [b, a] */
 
-      // 接收多个函数返回值
+      // 接收多个 函数返回值
+      function getUserInfo(id) {
+        // ajax
+        return [
+          true,
+          {
+            name: 'xm',
+            gender: 'female',
+            id: id,
+          },
+          '请求成功',
+        ]
+      }
+      const [status, data, msg] = getUserInfo(123)
     </script>
   </body>
 </html>

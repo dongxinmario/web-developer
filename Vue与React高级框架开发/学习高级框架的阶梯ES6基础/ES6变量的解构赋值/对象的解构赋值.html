@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象的解构赋值</title>
+  </head>
+  <body>
+    <script>
+      // 对象的解构赋值
+      /* const obj = {
+        saber: '阿尔托莉雅·潘拉贡',
+        archer: '卫宫士郎',
+      }
+      const { saber, archer1 } = obj */
+
+      // 稍微复杂的解构条件
+      /* const player = {
+        nickname: '感情的戏∫我没演技∆',
+        master: '东海龙王',
+        skill: [
+          {
+            skillName: '龙吟',
+            mp: '100',
+            time: 6000,
+          },
+          {
+            skillName: '龙卷雨击',
+            mp: '400',
+            time: 3000,
+          },
+          {
+            skillName: '龙腾',
+            mp: '900',
+            time: 60000,
+          },
+        ],
+      }
+      const { nickname } = player
+      const {
+        master,
+        skill,
+        skill: [skill1, { skillName }, { skillName: sklName }],
+      } = player */
+      // const [skill1] = skill
+
+      // 结合扩展运算符
+      /* const obj = {
+        saber: '阿尔托莉雅',
+        archer: '卫宫士郎',
+        lancer: '瑟坦达',
+      }
+      const { saber, ...oth } = obj */
+      /* const obj1 = {
+        archer: '卫宫士郎',
+        lancer: '瑟坦达',
+      }
+      const obj = {
+        saber: '阿尔托莉雅',
+        ...obj1,
+      } */
+      // 如何对已经声明了的变量进行对象的解构赋值
+      /* const obj = {
+        name: 'xm',
+        age: 22,
+      }
+      let { age } = obj */
+
+      // 默认值
+      /* let girlfriend = {
+        name: '拉克丝·克莱茵',
+        age: 22,
+      }
+      let { name, age = 24, hobby = ['唱歌', '烹饪'] } = girlfriend */
+
+      // 提取对象属性
+      /* const {
+        name,
+        hobby: [hobby1],
+        hobby,
+      } = {
+        name: '拉克丝·克莱茵',
+        hobby: ['唱歌', '烹饪'],
+      } */
+
+      // 使用对象传入乱序的函数参数
+      /* function AJAX({ url, data, type = 'get' }) {
+        // var type = option.type || 'get'
+        console.log(type)
+      }
+      AJAX({
+        url: '/getinfo',
+        data: {
+          a: 1,
+        },
+      }) */
+
+      // 获取多个 函数返回值
+      function getUserInfo(uid) {
+        return {
+          status: true,
+          data: {
+            name: '护士',
+          },
+          msg: '请求成功',
+        }
+      }
+      const { status, data, msg: message } = getUserInfo(123)
+    </script>
+  </body>
+</html>
