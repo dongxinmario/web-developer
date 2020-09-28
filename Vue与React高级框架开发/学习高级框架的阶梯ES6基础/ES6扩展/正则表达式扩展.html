@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>正则表达式扩展</title>
+  </head>
+  <body>
+    <script>
+      const regexp1 = /^a/g
+      const regexp2 = new RegExp('^a', 'g')
+      const regexp3 = new RegExp(/^a/g)
+      const regexp4 = new RegExp(/a/g)
+      const regexp5 = new RegExp(/a/)
+      console.log('aabbcc'.match(regexp1))
+      console.log('vaabbcc'.match(regexp1))
+      console.log('aabbccaabbccaa'.match(regexp4))
+      console.log('aabbccaabbccaa'.match(regexp5))
+
+      // 构造函数的变化
+      const regexp6 = new RegExp(/a/g, 'i')
+
+      // uy 修饰符 u unicode  y 粘连修饰符 sticky
+      console.log(/^\ud83d/.test('\ud83d\udc36')) // true
+      console.log(/^\ud83d/u.test('\ud83d\udc36')) // false
+      const r1 = /imooc/g // 匹配 全部 3 个
+      const r2 = /imooc/y // 匹配前 2个
+      const str = 'imoocimooc-imooc'
+      console.log(r1.exec(str))
+      console.log(r1.exec(str))
+      console.log(r1.exec(str))
+      console.log(r1.exec(str))
+      console.log('\n')
+      console.log(r2.exec(str))
+      console.log(r2.exec(str))
+      console.log(r2.exec(str))
+      console.log(r2.exec(str))
+    </script>
+  </body>
+</html>
