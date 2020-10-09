@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>信任问题</title>
+  </head>
+  <body>
+    <script>
+      // 信任问题
+      // 第三方某个库
+      function method(cb) {
+        // 未按所想的预期执行回调
+        setTimeout(() => {
+          // 讲道理应该是现在该调用回调了
+          cb && cb()
+          // 但是？？好像这个库有 bug 被多调用一次
+          cb && cb()
+        }, 1000)
+      }
+      // promise 一旦被确定为成功或失败 就不能再更改
+      function method() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            // 成功
+            resolve()
+            resolve()
+          }, 1000)
+        })
+      }
+      // 控制反转
+      function method(cb) {
+        // 未按所想的预期执行回调
+        setTimeout(() => {
+          // 执行回调 但是添油加醋
+          cb && cb.call({ a: 1, b: 2 })
+        }, 1000)
+      }
+      function method(cb) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve()
+            // 调用的resolve()全为自己所写的流程 很大程度上改善了反转控制的问题
+          }, 1000)
+        })
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>错误处理</title>
+  </head>
+  <body>
+    <script>
+      function f(val) {
+        return new Promise((resolve, reject) => {
+          if (val) {
+            resolve({ name: '小明' })
+          } else {
+            reject('404')
+          }
+        })
+      }
+      // then(resolve, reject) then 方法中的第二个回调 失败时做的事
+      /* f(true).then(
+        (data) => {
+          console.log(data)
+        },
+        (e) => {
+          console.log(e)
+        }
+      ) */
+      // catch 使用实例的 catch 方法 可以捕获错误
+      /* f(true)
+        .then((data) => {
+          console.log(data)
+          return f(false)
+        })
+        .then(() => {
+          console.log('我永远不会被输出')
+        })
+        .catch((e) => {
+          console.log(e)
+        }) */
+
+      // finally 无论成功失败 都会执行
+      f(true)
+        .then((data) => {
+          console.log(data)
+          return f(false)
+        })
+        .catch((e) => {
+          console.log(e)
+        })
+        .finally(() => {
+          console.log('最后执行的操作')
+        })
+    </script>
+  </body>
+</html>
