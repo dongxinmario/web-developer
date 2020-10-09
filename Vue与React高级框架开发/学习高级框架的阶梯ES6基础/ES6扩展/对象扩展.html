@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象扩展</title>
+  </head>
+  <body>
+    <script>
+      // 简洁表示法
+      /* const getUserInfo = (id = 1) => {
+        // ...ajax
+        const name = 'xm',
+          age = 10
+        return {
+          name: name,
+          age: age,
+          say: function () {
+            console.log(this.name + this.age)
+          },
+        }
+      }
+      const xm = getUserInfo() */
+      /* const getUserInfo = (id = 1) => {
+        // ...ajax
+        const name = 'xm',
+          age = 10
+        return {
+          name,
+          age,
+          say() {
+            console.log(this.name + this.age)
+          },
+        }
+      }
+      const xm = getUserInfo() */
+
+      // 属性名表达式
+      /* const obj = {
+        a: 1,
+        $abc: 2,
+        'FFEKOjc$%*^#@': 3,
+      }
+      const key = 'age'
+      const xm = {
+        name: '小明',
+        [key]: 14,
+        ['ssss' + 'wdd' + 1234]: 33,
+        [`${key}1234`]: 334,
+      } */
+    </script>
+    <script>
+      // 扩展运算符
+      // 复制对象 浅拷贝
+      /* const obj1 = {
+          a: 1,
+          b: 2,
+          d: {
+            aa: 1,
+            bb: 2,
+          },
+        },
+        obj2 = {
+          c: 3,
+          a: 9,
+        }
+      const cObj1 = { ...obj1 }
+      console.log(cObj1.d.aa) // 1
+      cObj1.d.aa = 999
+      console.log(cObj1.d.aa) // 999
+      console.log(obj1.d.aa) // 999 */
+
+      // 合并对象
+      /* const newObj = {
+        ...obj1,
+        ...obj2,
+      } */
+    </script>
+    <script>
+      // Object.is === +0 -0 NaN
+      /* console.log(Object.is(+0, -0)) // false
+      console.log(+0 === -0) // true
+      console.log(Object.is(NaN, NaN)) // true
+      console.log(NaN === NaN) // false */
+      // Object.assign 浅拷贝
+      // const obj = Object.assign({ a: 1 }, { b: 2 }, { c: 3 }, { d: 4, e: 5 })
+
+      // Object.keys
+      // console.log(Object.keys(obj))
+
+      // Object.values
+      // console.log(Object.values(obj))
+
+      // Object.entries
+      // console.log(Object.entries(obj))
+
+      // for - of
+      /* for (const key of Object.keys(obj)) {
+        console.log(key)
+      }
+      for (const [k, v] of Object.entries(obj)) {
+        console.log(k, v)
+      } */
+
+      // __proto__
+      // console.log({ a: 1 })
+
+      // Object.setPrototypeOf
+      /* const obj1 = {
+          a: 1,
+        },
+        obj2 = {
+          b: 1,
+        },
+        obj = Object.create(obj1)
+      console.log(obj.__proto__)
+      Object.setPrototypeOf(obj, obj2)
+      console.log(obj.__proto__) */
+
+      // Object.getPrototypeOf
+      /* const obj1 = { a: 1 }
+      const obj = Object.create(obj1)
+      console.log(obj.__proto__)
+      console.log(Object.getPrototypeOf(obj))
+      console.log(obj.__proto__ === Object.getPrototypeOf(obj)) // true */
+
+      // super
+      const obj = { name: 'xm' },
+        cObj = {
+          say() {
+            console.log(`My name is ${super.name}`)
+          },
+        }
+      Object.setPrototypeOf(cObj, obj)
+      cObj.say()
+    </script>
+  </body>
+</html>

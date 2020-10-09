@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数扩展</title>
+  </head>
+  <body>
+    <script>
+      // 函数参数的默认值
+      function add(a, b = 999) {
+        console.log(a, b)
+      }
+      add(1) // 1 999
+      function People({ name, age = 38 } = {}) {
+        console.log(name, age)
+      }
+      People() // undefined 38
+      People({ name: '上看看' })
+
+      // 结合扩展运算符(剩余参数)
+      function sum(...args) {
+        console.log(arguments)
+        // let args = Array.prototype.slice.call(arguments)
+        // let args = [...arguments]
+        // let [...args] = arguments
+        console.log(args)
+      }
+      sum(1, 2, 321, 4354, 'sdff')
+      function op(type, b, ...nums) {
+        console.log(type)
+        console.log(b)
+        console.log(nums)
+      }
+      op('sum', 1, 23, 454, 3, 67, 234)
+      function sums(...numbers) {
+        return numbers.reduce(function (a, b) {
+          return a + b
+        }, 0)
+      }
+      console.log(sums(1, 2, 3, 4))
+    </script>
+    <script>
+      // 箭头函数
+      const add1 = (a, b) => {
+        a += 1
+        return a + b
+      }
+      const add2 = function (a, b) {
+        a += 1
+        return a + b
+      }
+      console.log(add1(2, 2)) // 5
+      console.log(add2(2, 2)) // 5
+      /* const log = () => {
+        console.log(arguments)
+      }
+      log(1, 2, 3) // arguments is not defined */
+      /* const xm = {
+        name: 'xm',
+        say1: function () {
+          console.log(this)
+        },
+        say2: () => {
+          console.log(this)
+        },
+      }
+      xm.say1()
+      xm.say2() */
+      /* const xm = {
+        name: 'xm',
+        age: null,
+        getAge: function () {
+          let that = this
+          // ...ajax
+          setTimeout(() => {
+            that.age = 14
+            console.log(that)
+          }, 1000)
+        },
+      }
+      xm.getAge() */
+      const xm = {
+        name: 'xm',
+        age: null,
+        getAge: function () {
+          // ...ajax
+          setTimeout(() => {
+            this.age = 14
+            console.log(this)
+          }, 1000)
+        },
+      }
+      xm.getAge()
+    </script>
+  </body>
+</html>

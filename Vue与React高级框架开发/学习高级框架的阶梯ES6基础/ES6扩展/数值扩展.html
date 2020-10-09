@@ -18,6 +18,45 @@
     </script>
     <script>
       // 新的方法和安全数
+
+      // Number.parseInt Number.parseFloat
+      console.log(window.parseInt('1.23')) // 1
+      console.log(parseFloat('1.23')) // 1.23
+      console.log(Number.parseInt(1.23)) // 1
+      console.log(Number.parseFloat(1.23)) // 1.23
+
+      // Number.isNaN Number.isFinite
+      // isNaN
+      console.log(Number.isNaN(NaN)) // true
+      console.log(Number.isNaN(-NaN)) // true
+      console.log(Number.isNaN(1)) // false
+      console.log(Number.isNaN('1')) // false
+      console.log(Number.isNaN(true)) //false
+      function isNaN(value) {
+        return value !== value
+      }
+      console.log('\n')
+
+      // isFinite
+      console.log(Number.isFinite(Infinity)) // false
+      console.log(Number.isFinite(2 / 0)) // false
+      console.log(Number.isFinite(1234)) // true
+      console.log(Number.isFinite('1234')) // false
+      console.log(Number.isFinite(true)) // false
+      console.log(Number.isFinite(NaN)) // false
+
+      // Number.MAX_SAFE_INTEGER Number.MIN_SAFE_INTEGER
+      // Number.isSafeInteger()
+      console.log(Number.MAX_SAFE_INTEGER) // 9007199254740991
+      console.log(Number.MIN_SAFE_INTEGER) // -9007199254740991
+      console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER - 1)) // true
+      console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 1)) // false
+
+      // 幂运算 **
+      let a = 2 ** 2,
+        num = 2 ** (3 ** (2 ** 0)) + 1
+      console.log(a) // 4
+      console.log(num)
     </script>
   </body>
 </html>
