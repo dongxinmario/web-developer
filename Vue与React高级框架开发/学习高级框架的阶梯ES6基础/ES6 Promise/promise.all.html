@@ -39,9 +39,9 @@
       function getData4() {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
-            console.log('第四条数据加载成功')
+            // console.log('第四条数据加载成功')
             reject('data4 error')
-          }, 2000)
+          }, 500)
         })
       }
       let p = Promise.all([getData1(), getData2(), getData3(), getData4()])
@@ -53,6 +53,44 @@
           console.log(e)
         }
       )
+      // 不使用 Promise.all
+      /* let count = 0
+      function func() {
+        if (count < 4) return
+        console.log('全部拿到了')
+      }
+      function getData1() {
+        setTimeout(() => {
+          console.log('第一条数据加载成功')
+          count++
+          func()
+        }, 1000)
+      }
+      function getData2() {
+        setTimeout(() => {
+          console.log('第二条数据加载成功')
+          count++
+          func()
+        }, 1000)
+      }
+      function getData3() {
+        setTimeout(() => {
+          console.log('第三条数据加载成功')
+          count++
+          func()
+        }, 1000)
+      }
+      function getData4() {
+        setTimeout(() => {
+          console.log('第四条数据加载成功')
+          count++
+          func()
+        }, 1000)
+      }
+      getData1()
+      getData2()
+      getData3()
+      getData4() */
     </script>
   </body>
 </html>
