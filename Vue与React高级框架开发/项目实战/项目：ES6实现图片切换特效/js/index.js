@@ -3,6 +3,8 @@
 // 3. 绑定事件
 // 4. 显示到页面上
 ;(function (window, document) {
+  let canChange = true,
+    curPrevImgIndex = 0
   // 公共方法集合
   const methods = {
     appendChild(parent, ...children) {
@@ -90,7 +92,7 @@
     this.imgContainer = methods.$('.img-container', wrap)
     methods.appendChild(this.imgContainer, ...this.getImgsByType(this.curType))
     this.wrap = wrap
-    this.typeBtnEls = methods.$$('img-classify-type-btn', wrap)
+    this.typeBtnEls = [...methods.$$('.img-classify-type-btn', wrap)]
     this.figures = [...methods.$$('figure', wrap)]
     // 遮罩层
     let overlay = document.createElement('div')
@@ -119,6 +121,8 @@
   Img.prototype.bind = function () {
     methods.$('.img-classify', this.wrap).addEventListener('click', ({ target }) => {
       if (target.nodeName !== 'LI') return
+      if (!canChange) return
+      canChange = false
       const type = target.innerText,
         els = this.getImgsByType(type)
       let prevImgs = this.figures.map((figure) => methods.$('img', figure).src),
@@ -160,7 +164,23 @@
           this.imgContainer.removeChild(figure)
         })
         this.figures = els
+        canChange = true
       }, 600)
+      this.typeBtnEls.forEach((btn) => (btn.className = 'img-classify-type-btn'))
+      target.className = 'img-classify-type-btn active'
+    })
+    this.imgContainer.addEventListener('click', ({ target }) => {
+      if (target.nodeName !== 'FIGURE' && target.nodeName !== 'FIGCAPTION') return
+      if (target.nodeName === 'FIGCAPTION') {
+        target = target.parentNode
+      }
+      const src = methods.$('img', target).src
+      curPrevImgIndex = this.figures.findIndex((figure) => src === methods.$('img', figure).src)
+      this.prevImg.src = src
+      this.overlay.style.display = 'flex'
+      setTimeout(() => {
+        this.overlay.style.opacity = '1'
+      })
     })
   }
   // 显示元素
@@ -171,6 +191,22 @@
         figure.style.transform = 'scale(1, 1) translate(0, 0)'
         figure.style.opacity = '1'
       })
+    })
+    this.overlay.addEventListener('click', () => {
+      this.overlay.style.opacity = '0'
+      setTimeout(() => {
+        this.overlay.style.display = 'none'
+      }, 300)
+    })
+    methods.$('.prev-btn', this.overlay).addEventListener('click', (e) => {
+      e.stopPropagation()
+      curPrevImgIndex = curPrevImgIndex === 0 ? this.figures.length - 1 : curPrevImgIndex - 1
+      this.prevImg.src = methods.$('img', this.figures[curPrevImgIndex]).src
+    })
+    methods.$('.next-btn', this.overlay).addEventListener('click', (e) => {
+      e.stopPropagation()
+      curPrevImgIndex = curPrevImgIndex === this.figures.length - 1 ? 0 : curPrevImgIndex + 1
+      this.prevImg.src = methods.$('img', this.figures[curPrevImgIndex]).src
     })
   }
   Img.prototype.calcPosition = function (figures) {
