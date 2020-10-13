@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAQA,AAAA,KAAK,CAAC;EACJ,KAAK,EATC,KAAK;EAUX,MAAM,EATC,KAAK;EAUZ,gBAAgB,EATV,OAAO;EAYb,gBAAgB,EAAE,uBAAoB;CACvC;;AACD;;;;IAII;AACJ,AAAA,IAAI,CAAM;EACR,KAAK,EAtBC,KAAK;EAuBX,MAAM,EAtBC,KAAK;CAuBb;;AACD,AAAA,IAAI,CAAM;EACR,KAAY,EA1BN,KAAK;CA2BZ",
+    "sources": [
+        "基础语法.scss"
+    ],
+    "names": [],
+    "file": "基础语法.css"
+}

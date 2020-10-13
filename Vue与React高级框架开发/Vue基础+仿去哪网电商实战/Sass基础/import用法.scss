@@ -1,0 +1,7 @@
+// @import './变量作用域.css';
+@import 'base';
+$width: 300px;
+$color: #ffe932;
+.div {
+  width: $width;
+}

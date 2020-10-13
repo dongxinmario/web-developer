@@ -1,0 +1,51 @@
+.div {
+  width: 300px;
+}
+
+.div {
+  font: 10px/8px;
+  font: 1.25px;
+  font: 80px;
+  width: 150px;
+  margin-left: 9px;
+}
+
+.div {
+  color: #050709;
+}
+
+.div {
+  color: #030405;
+  color: 1;
+  color: 166;
+  color: 147;
+  color: 97;
+  color: #a69361;
+}
+
+.div {
+  background-image: url("images/hello.jpeg");
+}
+
+.div {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  color: red;
+}
+
+.div {
+  padding: 10px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  color: red;
+  background-color: red;
+}
+
+.div {
+  border-color: blue;
+  border-width: 2px;
+  border-style: dashed;
+}
+/*# sourceMappingURL=基本运算.css.map */

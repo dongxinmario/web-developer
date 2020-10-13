@@ -1,0 +1,28 @@
+$width: 300px;
+$height: 300px;
+$color: #e03434;
+$str: 'hello.jpeg';
+$strNoQout: abc;
+$class: '.div'; // $baseWidth: 200px;
+// $baseWidth: 100px !default;
+$styleKey: 'width';
+.div1 {
+  width: $width;
+  height: $height;
+  background-color: $color;
+  // background-image: url('./img/' + $str);
+  // background-image: url('./img/' + $strNoQout);
+  background-image: url('./img/#{$str}');
+}
+/* .div2 {
+  width: $baseWidth;
+  height: $baseWidth;
+  background-color: $color;
+} */
+#{$class} {
+  width: $width;
+  height: $height;
+}
+#{$class} {
+  #{$styleKey}: $width;
+}

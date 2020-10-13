@@ -1,0 +1,35 @@
+$width: 300px;
+$color: #fff;
+.div1 {
+  width: $width;
+  height: $width;
+  background-color: $color;
+  .div1-inner {
+    width: $width;
+    height: $width;
+    background-color: $color;
+    .div1-inner-inner {
+      width: $width;
+      height: $width;
+      background-color: $color;
+    }
+  }
+  a {
+    color: red;
+  }
+}
+.div2 {
+  width: $width;
+  height: $width;
+  background-color: $color;
+  .div2-inner {
+    border: {
+      left: 1px solid #000;
+      top: 2px solid #000;
+    }
+    background: {
+      image: url('abc.png');
+      color: #000;
+    }
+  }
+}

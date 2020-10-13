@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,KAAK,CAAC;EACJ,MAAM,EAHA,KAAK;EAKX,KAAK,EADQ,KAAK;CAEnB;;AACD,AAAA,KAAK,CAAC;EACJ,KAAK,EARC,KAAK;CASZ",
+    "sources": [
+        "变量作用域.scss"
+    ],
+    "names": [],
+    "file": "变量作用域.css"
+}

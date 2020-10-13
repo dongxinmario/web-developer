@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,IAAI,CAAA;EACF,MAAM,EAAE,CAAC;EAAC,OAAO,EAAE,CAAC;CACrB;;ADED,AAAA,IAAI,CAAC;EACH,KAAK,EAHC,KAAK;CAIZ",
+    "sources": [
+        "import用法.scss",
+        "_base.scss"
+    ],
+    "names": [],
+    "file": "import用法.css"
+}

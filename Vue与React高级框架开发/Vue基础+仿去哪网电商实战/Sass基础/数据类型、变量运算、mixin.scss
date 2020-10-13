@@ -1,0 +1,43 @@
+$width: 300px;
+$zoomValue: 2;
+$color: red;
+$colorHex: #ffe932;
+$str: 'hello.jpeg';
+$list: (100px, 200px, 'string', 2);
+$map: (
+  top: 1px,
+  left: 2px,
+  bottom: 3px,
+  right: 4px,
+);
+// Number 类型
+.div {
+  width: $width;
+  height: $width;
+  zoom: $zoomValue;
+}
+// color 类型
+.div {
+  color: $color;
+  background-color: $colorHex;
+}
+// string
+.div {
+  background-image: url('images/' + $str);
+}
+// list 数组
+.div {
+  width: nth($list: $list, $n: 1);
+  height: nth($list: $list, $n: 2);
+  zoom: index($list, 'string');
+}
+// map
+.div {
+  top: map-get($map: $map, $key: top);
+  left: map-get($map: $map, $key: left);
+}
+.div {
+  @each $key, $value in $map {
+    #{$key}: $value;
+  }
+}

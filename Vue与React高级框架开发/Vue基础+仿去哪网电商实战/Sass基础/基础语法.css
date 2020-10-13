@@ -1,0 +1,21 @@
+.div1 {
+  width: 300px;
+  height: 300px;
+  background-color: #e03434;
+  background-image: url("./img/hello.jpeg");
+}
+
+/* .div2 {
+  width: $baseWidth;
+  height: $baseWidth;
+  background-color: $color;
+} */
+.div {
+  width: 300px;
+  height: 300px;
+}
+
+.div {
+  width: 300px;
+}
+/*# sourceMappingURL=基础语法.css.map */
