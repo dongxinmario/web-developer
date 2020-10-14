@@ -1,0 +1,116 @@
+@import './reset.scss';
+$baseFontSize: 17px;
+$redColor: #d43d3d;
+$assetsDir: 'assets';
+@mixin sectionStyle {
+  margin: 0 15px;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.6);
+  padding: 10px 0;
+}
+@mixin hotLabel($color) {
+  font-size: 14px;
+  color: $color;
+  border: 1px solid $color;
+}
+@mixin twoLineWords {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+@mixin commonImg {
+  border: none;
+  width: 100%;
+  display: block;
+}
+.header {
+  height: 45px;
+  background-color: $redColor;
+  .header-logo {
+    width: 100px;
+    height: 100%;
+    margin: 0 auto;
+    background: url(./assets/wap_logo@3x_581de69e.png) no-repeat center;
+    background-size: contain;
+  }
+}
+.topBar {
+  background-color: #f4f5f6;
+  height: 34px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  .topMenu {
+    white-space: nowrap;
+    overflow: hidden;
+    height: 100%;
+    display: inline-block;
+    .btn {
+      padding: 8px;
+      display: inline-block;
+      font-size: $baseFontSize;
+      &.act {
+        color: $redColor;
+      }
+    }
+  }
+}
+.content {
+  .section-item {
+    @include sectionStyle();
+    .title {
+      font-size: 20px;
+    }
+    .item-info {
+      color: #999;
+      font-size: 14px;
+      margin-top: 11px;
+      .stick-label {
+        @include hotLabel($redColor);
+      }
+      .src {
+        color: #999;
+        font-size: 14px;
+      }
+    }
+  }
+  .images-item {
+    @extend .section-item;
+    .item-detail {
+      .title {
+        @include twoLineWords();
+      }
+      .image-list {
+        margin-top: 10px;
+        ul {
+          overflow: hidden;
+          .img-holder {
+            float: left;
+            width: 33.33%;
+            height: 80px;
+            img {
+              @include commonImg();
+            }
+          }
+        }
+      }
+    }
+  }
+  .image-item {
+    @extend .section-item;
+    .item-detail {
+      .one-image {
+        height: 195px;
+        margin-top: 10px;
+        img {
+          @include commonImg();
+        }
+      }
+      .item-info {
+        .ads-label {
+          @include hotLabel(#2a90d7);
+        }
+      }
+    }
+  }
+}
