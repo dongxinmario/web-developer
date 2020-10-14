@@ -1,0 +1,65 @@
+$number1: 70;
+$number2: 71;
+$numberPercent: 0.77;
+$numberRound: 25.9;
+$abs: -3;
+.div {
+  zoom: percentage($numberPercent);
+  zoom: round($numberRound);
+  zoom: ceil($numberRound);
+  zoom: floor($numberRound);
+  zoom: abs($abs);
+  zoom: min($number1, $number2);
+  zoom: max($number1, $number2);
+  zoom: random($limit: 10);
+}
+// list
+$list: (1, 'p', 3, 4, 5);
+.div {
+  zoom: length($list);
+  zoom: nth($list: $list, $n: 2);
+  @debug set-nth($list: $list, $n: 1, $value: 'x');
+  @debug join($list, (6, 7, 8));
+  @debug append($list, '999');
+  @debug index($list, 'p');
+}
+// string
+$str: 'hello';
+$strNo: hello;
+.div {
+  background-image: unquote($str);
+  background-image: quote($strNo);
+  background-image: str-length($str);
+  @debug str-insert($string: $str, $insert: 'p', $index: 2);
+  @debug str-index($string: $str, $substring: 'o');
+  background-image: to-upper-case($string: $str);
+  background-image: to-lower-case($string: $str);
+}
+// map
+$map: (
+  top: 1px,
+  left: 2px,
+  bottom: 3px,
+  right: 4px,
+);
+.div {
+  width: map-get($map: $map, $key: top);
+  @debug map-remove($map, bottom);
+  @debug map-keys($map: $map);
+  @debug map-values($map: $map);
+  @debug map-has-key($map: $map, $key: abc);
+}
+@mixin foo($args...) {
+  @debug keywords($args: $args);
+}
+@include foo($arg1: 'abc', $arg2: 'cdf');
+// 自定义函数
+$rem1: 100px;
+@function px2rem($px) {
+  $rem: 37.5px;
+  @debug $rem;
+  @return ($px/$rem) + rem;
+}
+.div {
+  width: px2rem($rem1);
+}
