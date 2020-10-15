@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue实例生命周期钩子</title>
+    <script src="../vue.js"></script>
+  </head>
+  <body>
+    <div id="app">{{msg}}</div>
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          msg: 'hello world',
+        },
+        beforeCreate() {
+          console.log('beforeCreate')
+        },
+        created() {
+          console.log('created')
+        },
+        beforeMount() {
+          console.log(this.$el)
+          console.log('beforeMount')
+        },
+        mounted() {
+          console.log(this.$el)
+          console.log('mounted')
+        },
+        beforeDestroy() {
+          console.log('beforeDestroy')
+        },
+        destroyed() {
+          console.log('destroyed')
+        },
+        beforeUpdate() {
+          console.log('beforeUpdate')
+        },
+        updated() {
+          console.log('updated')
+        },
+        methods: {},
+      })
+    </script>
+  </body>
+</html>
