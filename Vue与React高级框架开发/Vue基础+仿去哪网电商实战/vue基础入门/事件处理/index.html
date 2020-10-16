@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue中的事件处理</title>
+    <script src="../vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <button @click="handleClick($event,1,2,3)">Buton</button> -->
+      prevent-阻止默认行为 stop-阻止冒泡 self-自身才触发
+      <form action="/abc" @click.prevent>
+        <input type="submit" />
+      </form>
+      <div @click.self="handleClick">
+        self
+        <div>hello world</div>
+      </div>
+      <div @click.once="handleClick">
+        once
+        <div>hello world</div>
+      </div>
+      <div @click.capture="handleClick">
+        captrue 捕获
+        <div @click.capture="handleClickInner">hello world</div>
+      </div>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        methods: {
+          // handleClick(e, one, two, three) {
+          //   console.log(e, one, two, three)
+          // },
+          handleClick() {
+            alert('outter')
+          },
+          handleClickInner() {
+            alert('inner')
+          },
+        },
+      })
+    </script>
+  </body>
+</html>

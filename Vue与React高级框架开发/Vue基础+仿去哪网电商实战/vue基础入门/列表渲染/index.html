@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>列表渲染</title>
+    <script src="../vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <template v-for="(item, index) in list" :key="item.id">
+        <div>{{item.text}}</div>
+        <span>{{item.text}}</span>
+      </template> -->
+      <template v-for="(item,key,index) in userInfo">
+        <div>{{item}}---{{key}}---{{index}}</div>
+      </template>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          /* list: [
+            {
+              id: 1,
+              text: 'hello',
+            },
+            {
+              id: 2,
+              text: 'Dell',
+            },
+            {
+              id: 3,
+              text: 'Lee',
+            },
+          ], */
+          userInfo: {
+            name: 'Dell',
+            age: 28,
+            gender: 'male',
+            salary: 'secret',
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
