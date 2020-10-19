@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" body-content="width=device-width, initial-scale=1.0" />
+    <title>使用插槽</title>
+    <script src="../vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <child>
+        <p>Dell</p>
+      </child>
+      <body-content>
+        <!-- <div class="header" slot="header">header</div> -->
+        <div class="footer" slot="footer">footer</div>
+      </body-content>
+    </div>
+    <script>
+      Vue.component('child', {
+        template: `
+        <div>
+          <p>hello</p>
+          <slot></slot>
+        </div>
+        `,
+      })
+      Vue.component('bodyContent', {
+        template: `
+        <div>
+          <slot name="header">
+            <h1>Default header</h1>
+          </slot>
+          <div class="body-content">body-content</div>
+          <slot name="footer"></slot>
+        </div>
+        `,
+      })
+      var vm = new Vue({
+        el: '#app',
+      })
+    </script>
+  </body>
+</html>

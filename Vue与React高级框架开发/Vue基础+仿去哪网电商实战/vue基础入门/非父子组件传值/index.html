@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>非父子组件传值</title>
+    <script src="../vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Bus / 总线 / 发布订阅模式 / 观察者模式 -->
+      <child count="Dell"></child>
+      <child count="Lee"></child>
+    </div>
+    <script>
+      Vue.prototype.bus = new Vue()
+      Vue.component('child', {
+        props: {
+          count: String,
+        },
+        data() {
+          return {
+            selfCount:this.count
+          }
+        },
+        template: '<div @click="handleClick">{{selfCount}}</div>',
+        methods: {
+          handleClick() {
+            this.bus.$emit('change', this.selfCount)
+          },
+        },
+        mounted() {
+          let that = this
+          this.bus.$on('change', function (msg) {
+            that.selfCount = msg
+          })
+        },
+      })
+      var vm = new Vue({
+        el: '#app',
+      })
+    </script>
+  </body>
+</html>

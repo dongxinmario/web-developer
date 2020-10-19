@@ -25,6 +25,13 @@
         captrue 捕获
         <div @click.capture="handleClickInner">hello world</div>
       </div>
+      <!-- 按键修饰符 -->
+      <input type="text" @keydown.enter="handleKeyDown" />
+      <br />
+      <!-- 系统修饰符 ctrl alt shift meta -->
+      <input type="text" @keydown.ctrl="handleKeyDown" />
+      <!-- 鼠标点击 left right middle -->
+      <div @click.right="handleMouseClick">鼠标点击</div>
     </div>
     <script>
       var vm = new Vue({
@@ -38,6 +45,12 @@
           },
           handleClickInner() {
             alert('inner')
+          },
+          handleKeyDown(e) {
+            console.log(e.target.value)
+          },
+          handleMouseClick(e) {
+            console.log('鼠标右键被点击')
           },
         },
       })
