@@ -1,11 +1,18 @@
 <template>
   <div class="home">
-    Home
+    <home-header />
+    <home-swiper />
   </div>
 </template>
 <script>
+import HomeHeader from './components/Header'
+import HomeSwiper from './components/Swiper'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    HomeHeader,
+    HomeSwiper
+  }
 }
 </script>
 <style>
