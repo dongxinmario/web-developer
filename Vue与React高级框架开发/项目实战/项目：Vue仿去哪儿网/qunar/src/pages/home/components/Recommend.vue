@@ -2,14 +2,15 @@
   <div class="home-recommend">
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <li class="recommend-item border-bottom">
-        <img
-          src="https://imgs.qunarzz.com/sight/p0/2005/a9/a9411416ff215fe2a3.water.jpg_200x200_3110fb7b.jpg"
-          class="item-img"
-        />
+      <li
+        class="recommend-item border-bottom"
+        v-for="item in recommendList"
+        :key="item.id"
+      >
+        <img :src="item.imgUrl" class="item-img" />
         <div class="item-info">
-          <p class="item-title">上海迪士尼乐园</p>
-          <p class="item-desc">全球最大的迪士尼城堡</p>
+          <p class="item-title">{{ item.title }}</p>
+          <p class="item-desc">{{ item.desc }}</p>
           <button class="item-btn">查看详情</button>
         </div>
       </li>
@@ -19,6 +20,9 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    recommendList: Array
+  },
   data () {
     return {
     }
@@ -26,6 +30,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+@import '~styles/mixins.styl'
 .home-recommend
   .recommend-title
     margin-top 0.2rem
@@ -43,15 +48,19 @@ export default {
     .item-info
       flex 1
       padding 0.1rem
+      min-width 0
       .item-title
         line-height 0.54rem
         font-size 0.32rem
+        ellipsis()
       .item-desc
         line-height 0.4rem
         color #ccc
+        ellipsis()
       .item-btn
         background #ff9300
-        padding 0 0.1rem
+        padding 0 0.2rem
         border-radius 0.06rem
-        margin-top .2rem
+        margin-top 0.16rem
+        line-height 0.44rem
 </style>
