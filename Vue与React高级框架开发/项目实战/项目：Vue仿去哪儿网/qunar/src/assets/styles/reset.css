@@ -151,6 +151,7 @@ select,
 a {
   outline: 0 none;
   border: none;
+  text-decoration: none;
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {
