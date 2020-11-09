@@ -80,6 +80,7 @@ export default {
     },
     handleCityClick (city) {
       this.changeCity(city)
+      this.keyword = ''
       this.backPage()
     }
   },

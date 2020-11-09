@@ -5,6 +5,7 @@ html {
   background-color: #fff;
   color: #000;
   font-size: 12px;
+  touch-action: manipulation;
 }
 body,
 ul,
