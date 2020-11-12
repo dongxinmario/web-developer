@@ -1,8 +1,8 @@
 <template>
   <div class="city-header">
     <div class="city-title">
-      <div @click="backPage()">
-        <span class="iconfont back-icon">&#xe624;</span>
+      <div>
+        <span class="iconfont back-icon" @click="backPage()">&#xe624;</span>
       </div>
       <span>城市选择</span>
     </div>
